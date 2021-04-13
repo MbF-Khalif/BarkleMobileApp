@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text,Image,ScrollView,TouchableOpacity,StatusBar,SafeAreaView } from 'react-native';
+import { View,Dimensions, Text,Image,ScrollView,TouchableOpacity,StyleSheet,StatusBar,SafeAreaView } from 'react-native';
 import moment from 'moment';
 
 import H2 from "../../Common/Typos/h2";
@@ -17,7 +17,14 @@ import { connect } from 'react-redux';
 import { isEmpty, map,filter } from "lodash";
 import { getWorkouts } from '../../../actions/workoutsAction';
 import { styles } from './style';
+
+const windowHeight = Dimensions.get('window').height;
  
+const styl = StyleSheet.create({
+    menuHeight:{
+      minHeight: windowHeight/1.5,
+    }
+}); 
 class Events extends Component {
 	constructor(){
         super();
@@ -127,7 +134,7 @@ class Events extends Component {
 					    	<Text style={styles.workTitle}>Fine tune your performance, find a tribe with similar capabilities, and determine how to get yourself to the next level.</Text>
 					    </View>}
 				    </View>
-				    {bodyScroll && <View style={[bodyScroll === false && styles.bodyHidden ,styles.body]}>
+				    {bodyScroll && <View style={[styl.menuHeight,styles.body]}>
 				    <LinkList onPress={this.onEventsDetails} border  title='Output Goal Calculator' />
 				    </View>}
 				</ScrollView>
