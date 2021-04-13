@@ -9,10 +9,6 @@ export const styles = StyleSheet.create({
     topSafeArea: {
         backgroundColor: "#F45B56",
     },
-    bodyHidden:{
-        // display: 'none',
-
-    },
     menuColor: {
         backgroundColor: "#202840",
     },  

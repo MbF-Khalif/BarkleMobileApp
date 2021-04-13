@@ -2,7 +2,7 @@ import { StyleSheet, StatusBar } from 'react-native';
 import { config } from "../../../theme/config";
 
 export const styles = StyleSheet.create({
-	container:{
+    container:{
         backgroundColor: config.white,
         // paddingBottom: 100
     },
@@ -46,8 +46,8 @@ export const styles = StyleSheet.create({
         backgroundColor: "#202840",
     },  
     text: {
-    	color: config.white,
-    	fontSize: 20,
+        color: config.white,
+        fontSize: 20,
         lineHeight: 24,
         fontFamily:config.fontPrimary,
     },
@@ -94,7 +94,6 @@ export const styles = StyleSheet.create({
     blockEvent:{
         flex: 1,
         flexDirection:'row',
-        marginBottom: 40,
         flexWrap:'wrap', 
         borderBottomColor:'#e9e9e9',
         borderBottomWidth:0.75,       

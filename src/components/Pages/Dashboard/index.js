@@ -82,14 +82,10 @@ class Dashboard extends Component {
 			const data = {
 				userIds
 			};
-			console.log(headers,userIds,'userIds')
-
-			
 			this.props.getAllEventAction(headers).then(res =>{
 			this.setState({
-				allEvents: res.getAllEvent.data.message
+				allEvents: res.getAllEvent.data.event
 			})
-			console.log(res,'Jesus')
 			}).catch(err => {
 			console.log(err.response,err,'error')
 			});
@@ -98,12 +94,10 @@ class Dashboard extends Component {
 				var events = list.map(function(i) {
 				  return i;
 				});
-				console.log(list,events,'events')
 			this.setState({
 				eventList: list,
 				eventsDetail: events
 			})
-			console.log(res,'JesusJesus')
 			}).catch(err => {
 			console.log(err,err.response,err,'errorError')
 			});
@@ -119,11 +113,9 @@ class Dashboard extends Component {
 	    	loader:false
 	    },1800)
 	    this.props.getAllChallengeAction(headers).then(res =>{
-					console.log(res,'getAllChallengeAction')
 					this.setState({
 						allChallenge: res.getAllChallenge.data
 					})
-			      console.log(res,'getAllChallengeAction')
 			    }).catch(err => {
 			      console.log(err.response,err,'errorgetAllChallengeAction')
 		    });
@@ -135,6 +127,9 @@ class Dashboard extends Component {
 	onEvent = () => {
 		Actions.events();
 	}
+	onChallenges = () => {
+		// Actions.challenges();
+	}
 	onMissions = () => {
 		Actions.missions();
 	}
@@ -144,11 +139,9 @@ class Dashboard extends Component {
 	}
 	onChallengeDetails = (el) => {
 		this.props.addChallengeAction(el);
-		console.log(el,'onEventsDetails')
 		Actions.challengesDetails();
 	}
 	passStateValue = (el) => {
-		console.log(el,'alert');
 		this.setState({
 			bodyScroll:el
 		})
@@ -158,24 +151,22 @@ class Dashboard extends Component {
 		const { workOuts } = this.props;
 		const pickDate = moment(new Date()).format('YYYY-MM-DD');
 		const upComingEvent = filter(allEvents, (el, i) => el.eventdate > pickDate)
-		console.log(upComingEvent,'upComingEvent')
 		const upComingEventLength = upComingEvent.length;
 		const eventsLength = eventList.length;
 		let numWeeks = 2;
 		let now = new Date();
 		now.setDate(now.getDate() + numWeeks * 7);
-		console.log(moment(now).format('DD MMM YYYY'),now,'now');
 		var firstday = new Date(now.setDate(now.getDate() - now.getDay()));
 		var lastday = new Date(now.setDate(now.getDate() - now.getDay()+6));
 		return (
 			<>
 			{loader === true && <Updating/>}
 			<StatusBar backgroundColor='#F45B56' />
-			<SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
-			<ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>
+			<SafeAreaView style={styles.topSafeArea} />
+			<ScrollView showsVerticalScrollIndicator={false} style={styles.topSafeArea}>
 				<View style={styles.container} >
-						<View style={[styles.profile,bodyScroll === true && styles.leftSpaces]}>
-							{bodyScroll === true && <View style={styles.imgBlk}>
+						<View style={[styles.profile,styles.leftSpaces]}>
+							<View style={styles.imgBlk}>
 								{/*!isEmpty(image) && <Image
 									style={{width: 65, height: 65}}
 							        source={{
@@ -183,20 +174,20 @@ class Dashboard extends Component {
 							        }}
 							      />*/}
 								<Image style={{width: 82, height: 82,borderRadius:100}} source={require('../../../assets/images/profile.png')}/>
-							</View>}
+							</View>
 
-							<View style={bodyScroll === true && styles.leftSpace}>	
+							<View style={styles.leftSpace}>	
 							    <Header passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
-							    {bodyScroll === true && <Text style={styles.normalText}>
-							    #{hashName}</Text>}
+							    <Text style={styles.normalText}>
+							    #{hashName}</Text>
 							</View>
 						    
 					    </View>
-					    {bodyScroll === true && <View style={styles.body}>
+					    <View style={styles.body}>
 					    	<View style={styles.blkBSpace}>
 						    	<TouchableOpacity onPress={this.onEvent}>
-						    	<H4 style={{color:'#f45b56',paddingBottom: 20,}}>Events you’re attending ({eventsLength})</H4></TouchableOpacity>
-						    	{eventsLength === 0?<View>
+						    	<H4 style={{color:'#f45b56',paddingBottom: 20,}}>Events you’re attending ({upComingEventLength})</H4></TouchableOpacity>
+						    	{upComingEvent === 0?<View>
 						    	<View style={styles.eventBox}>
 						    		<P style={{color:	'#525252',width: '80%'}}>You haven’t joined any events yet. Check out all our &nbsp;<TouchableOpacity onPress={this.onEvent} style={styles.borderBottom}><P style={styles.linkText}>upcoming events</P></TouchableOpacity>&nbsp; and get started! 👊
 						    		</P>
@@ -204,19 +195,20 @@ class Dashboard extends Component {
 						    	<TouchableOpacity onPress={this.onEvent} style={[styles.borderBottom,styles.bottomSpace]}><P style={styles.linkText}>Your events history</P></TouchableOpacity>
 						    	</View>:
 					    	<View style={styles.blockEvent}>
-							    {map(eventsDetail, (el, i) => <LinkList key={i} onPress={this.onEventsDetails.bind(this, el[0])} timeOnly title={el[0].eventname}  dayOnly days={moment(el[0].eventdate).format('dddd')} time={el[0].eventtime} date={moment(el[0].eventdate).format('DD MMM YYYY')} />)}
+							    {/*map(eventsDetail, (el, i) => <LinkList key={i} onPress={this.onEventsDetails.bind(this, el[0])} timeOnly title={el[0].eventname}  dayOnly days={moment(el[0].eventdate).format('dddd')} time={el[0].eventtime} date={moment(el[0].eventdate).format('DD MMM YYYY')} />)*/}
+							    {map(upComingEvent, (el, i) => <LinkList key={i} onPress={this.onEventsDetails.bind(this, el)} timeOnly title={el.eventname}  dayOnly days={moment(el.eventdate).format('dddd')} time={el.eventtime} date={moment(el.eventdate).format('DD MMM YYYY')} />)}
 						    </View>}
 					    	</View>
 					    	<View style={styles.blkBSpace}>
 						    	{/*TouchableOpacity onPress={this.onEvent}><H4>Events ({upComingEventLength})</H4></TouchableOpacity>*/}
-						    	<TouchableOpacity onPress={this.onEvent}>
+						    	<TouchableOpacity onPress={this.onChallenges}>
 						    	<H4 style={{color:'#f45b56',paddingBottom: 20,}}>Challenges</H4></TouchableOpacity>
 
-						    	{bodyScroll && <View >
+						    	
 							  <View style={styles.blockEvent}>
 							    {map(allChallenge, (el, i) => <LinkList key={i} dates={el.start_date} style={styles.removeBorer} onPress={this.onChallengeDetails.bind(this, el)} challenge title={el.name} value={el.partc_teams.length} mail={el.tot_weeks} startday={moment(el.start_date).format('DD MMM YYYY')} endday={moment((now).setDate((now).getDate() + el.tot_weeks * 7)).format('DD MMM YYYY')} time={el.tot_weeks} />)}
 						    </View>
-							</View>}
+							
 						    	{/*<View style={styles.eventBox}>
 						    		<P style={{color:	'#525252',width: '80%'}}>You haven’t joined any missions yet. Check out all our &nbsp;<TouchableOpacity style={styles.borderBottom}><P style={styles.linkText}>upcoming missions</P></TouchableOpacity>&nbsp; and get started! 👊
 						    		</P>
@@ -230,10 +222,10 @@ class Dashboard extends Component {
 						    	<LinkList onPress={this.onEvents} title='Drill the Earth' date='1,228 miles' />
 						    	<LinkList onPress={this.onEvents} title='Pelofondo' date='1,228 miles' />
 						    </View>*/}
-							</View>}
+							</View>
 					    {!isEmpty(workOuts) && !isEmpty(workOuts.data) && <H4>{`Workouts (${workOuts.data.length})`}</H4>}
 
-					    {bodyScroll === true && <View style={styles.workOutsBg}>
+					    <View style={styles.workOutsBg}>
 					    	<H4 style={{color:'#000000'}}>Workouts ({workoutsList.length})</H4>
 						    <View style={styles.workOuts}>
 						    	{map(workoutsList, (el, i) => <View key={i} style={styles.coverBlk}>
@@ -243,7 +235,7 @@ class Dashboard extends Component {
 							    	</View>
 							    </View>)}
 						    </View>
-					    </View>}						
+					    </View>						
 				</View>
 				</ScrollView>
 			</>
@@ -253,10 +245,10 @@ class Dashboard extends Component {
 
 
 function mapStateToProps(state) {
-	console.log(state)
     return {
         workOuts:state.workOuts.data,
     }
 }
 
 export default connect(null, {addChallengeAction,getgoingmaybeAction,getAllChallengeAction, addItemAction, getAllEventAction,getWorkouts })(Dashboard);
+	

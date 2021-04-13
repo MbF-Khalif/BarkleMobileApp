@@ -46,25 +46,27 @@ class App extends Component {
   async getData() {
     const tocken = await AsyncStorage.getItem("bearertoken");
     const userId = await AsyncStorage.getItem("barkleUserID");
+    const session = await AsyncStorage.getItem("sessionId");
     this.setState({
       bearerAccess: tocken,
-      userId: userId
+      userId: userId,
+      sessionId: session
     })
   }
    
   render() {
-    const {userId} = this.state;
+    const {userId,sessionId} = this.state;
     return (
         <ConnectedRoute>
           <Stack key='root' hideNavBar={true} panHandlers={null} swipeEnabled={false}>
-            <Scene key='barklelogin' component={BarkleLogin} />
             <Scene key='confirmEmail' component={ConfirmEmail} />
             <Scene key='retrievePassword' component={RetrievePassword} />
             <Scene key='email' component={Email} />
             <Scene key='changePassword' component={ChangePassword} />
             <Scene key='signup' component={Signup} />
+            <Scene key='barklelogin' component={BarkleLogin}/>
             <Scene key='success' component={Success} />
-            {isEmpty(userId) ? <Scene key='login' component={Login} />:
+            {sessionId === null ?<Scene key='login' component={Login} initial/>: userId === null ? <Scene key='barklelogin' component={BarkleLogin} initial/>:
              <Scene key='dashboard' component={Dashboard} initial />}
             <Scene key='events' component={Events} />
             <Scene key='eventsDetails' component={EventsDetails} />

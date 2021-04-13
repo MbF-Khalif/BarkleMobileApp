@@ -64,6 +64,7 @@ class EventsDetails extends Component {
 
 	    const { selectedEvent } = this.props;
 	    const evevtID = selectedEvent.event_id;
+	    console.log(evevtID,'evevtID')
 	    this.setState({
 	    	eventsIds: evevtID
 	    })
@@ -73,6 +74,7 @@ class EventsDetails extends Component {
 	    this.props.leaderBoardAction();
 	    this.props.checkgoingmaybeAction(userId,eventsIds,headers).then(res =>{
 	    	const check = res.checkgoingmaybe.data.message.event_type;
+	    	console.log(res,'checkgoingmaybeAction')
 	    	this.setState({
 	    		checked: check
 	    	})
@@ -150,7 +152,7 @@ class EventsDetails extends Component {
       Authorization: "Bearer " + bearerAccess,
 	    };
 	    const { selectedEvent } = this.props;
-	    const evevtID = selectedEvent.id;
+	    const evevtID = selectedEvent.event_id;
 	    const reqObj = {
 	      event_type: '22',
 	      event_id: evevtID,
@@ -192,7 +194,7 @@ class EventsDetails extends Component {
       Authorization: "Bearer " + bearerAccess,
 	    };
 	    const { selectedEvent } = this.props;
-	    const evevtID = selectedEvent.id;
+	    const evevtID = selectedEvent.event_id;
 	    const reqObj = {
 	      event_type: '11',
 	      event_id: evevtID,

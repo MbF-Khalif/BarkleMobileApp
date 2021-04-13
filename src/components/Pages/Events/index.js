@@ -115,7 +115,7 @@ class Events extends Component {
 		console.log(filter(allEvents, (el, i) => el.eventdate < pickDate),pickDate);
 		const completedEvent = filter(allEvents, (el, i) => el.eventdate < pickDate)
 		const upComingEvent = filter(allEvents, (el, i) => el.eventdate > pickDate)
-		console.log(upComingEvent,completedEvent,pickDate,allEvents);
+		// console.log(upComingEvent,'upComingEvent',completedEvent,pickDate,allEvents);
 		return (
 			<View style={styles.container} >
 				<StatusBar backgroundColor='#F45B56' />
@@ -123,7 +123,7 @@ class Events extends Component {
 				<ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>
 					<View style={styles.bG}>
 						<Header back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
-					    {bodyScroll === true &&<View style={[bodyScroll === false && styles.bodyHidden ,styles.eventsDetails]}>
+					    <View style={styles.eventsDetails}>
 					    	<Text style={styles.p}>Events</Text>
 					    	<Text style={styles.workTitle}>Get ready to ride together with your pack! View exciting events or create your own.</Text>
 					    	<Button
@@ -134,9 +134,9 @@ class Events extends Component {
 				              label="Create a new event"
 				              loader={this.state.loaderStatus}
 				            />
-					    </View>}
+					    </View>
 				    </View>
-				    {bodyScroll === true && <View style={[bodyScroll === false && styles.bodyHidden ,styles.body]}>
+				    <View style={styles.body}>
 				    	<View style={styles.tabSec}>
 				    	<ScrollView horizontal={true}>
 					    	<TouchableOpacity onPress={this.onChange}  style={[styles.tabBlock,upcoming && styles.activeTab]}>
@@ -157,7 +157,7 @@ class Events extends Component {
 					    {myride && <View style={styles.blockEvent}>
 						    {map(completedEvent, (el, i) => <LinkList key={i} onPress={this.onEventsDetails.bind(this, el)} timeOnly title={el.eventname}  time={el.eventtime} date={moment(el.eventdate).format('DD MMM YYYY')} />)}
 					    </View>}
-					</View>}
+					</View>
 				</ScrollView>
 			</View>
 		);
