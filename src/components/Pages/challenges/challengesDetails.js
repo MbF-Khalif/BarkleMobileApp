@@ -225,10 +225,10 @@ class ChallengesDetails extends Component {
 					    		</View>*/}
 					   
 					    	
-						  <View style={styles.blockEvent}>
+						{/*<View style={styles.blockEvent}>
 						    <LinkList onPress={this.onEventsDetails} mils title='sdfsd' value='sdfsdf' mail="sdfsd" startday={moment().format('DD MMM YYYY')} endday={moment().format('DD MMM YYYY')}/>
 						    <LinkList onPress={this.onEventsDetails} mils title='sdfsd' value='sdfsdf' mail="sdfsd" startday={moment().format('DD MMM YYYY')} endday={moment().format('DD MMM YYYY')}/>
-					    </View>
+					    </View>*/}
 						</View>}					    
 					</ScrollView>
 				</View>
