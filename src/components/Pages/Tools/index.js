@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View,Dimensions, Text,Image,ScrollView,TouchableOpacity,StyleSheet,StatusBar,SafeAreaView } from 'react-native';
+import { View, Text,Image,Dimensions,ScrollView,StyleSheet,TouchableOpacity,StatusBar,SafeAreaView } from 'react-native';
 import moment from 'moment';
 
 import H2 from "../../Common/Typos/h2";
@@ -19,12 +19,13 @@ import { getWorkouts } from '../../../actions/workoutsAction';
 import { styles } from './style';
 
 const windowHeight = Dimensions.get('window').height;
- 
+
 const styl = StyleSheet.create({
     menuHeight:{
-      minHeight: windowHeight/1.5,
+      minHeight: windowHeight/1.6,
     }
-}); 
+});
+
 class Events extends Component {
 	constructor(){
         super();
@@ -123,20 +124,20 @@ class Events extends Component {
 		const upComingEvent = filter(allEvents, (el, i) => el.eventdate > pickDate)
 		console.log(upComingEvent,completedEvent,pickDate,allEvents);
 		return (
-			     <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>
+			     <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={styles.topSafeArea}>
 				<StatusBar backgroundColor='#F45B56' />
-				<SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
+				<SafeAreaView style={styles.topSafeArea} />
 				
 					<View style={styles.bG}>
-						<Header back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
-					    {bodyScroll && <View style={styles.eventsDetails}>
+						<Header hamburger back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
+					    <View style={styles.eventsDetails}>
 					    	<Text style={styles.p}>Tools</Text>
 					    	<Text style={styles.workTitle}>Fine tune your performance, find a tribe with similar capabilities, and determine how to get yourself to the next level.</Text>
-					    </View>}
+					    </View>
 				    </View>
-				    {bodyScroll && <View style={[styl.menuHeight,styles.body]}>
-				    <LinkList onPress={this.onEventsDetails} border  title='Output Goal Calculator' />
-				    </View>}
+				    <View style={[styl.menuHeight,styles.body]}>
+				    <LinkList style={{paddingBottom: 10}} border onPress={this.onEventsDetails}  title='Output Goal Calculator' />
+                    </View>
 				</ScrollView>
 			
 		);

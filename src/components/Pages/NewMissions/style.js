@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         backgroundColor:'#44C0C6',
     },
     menuColor: {
-        backgroundColor: "#202840",
+        backgroundColor: "#44C0C6",
     },
    topSafeArea: {
         backgroundColor: "#44C0C6",

@@ -104,7 +104,6 @@ class ChangePassword extends Component {
 								value={confirmpassword}
 								secureTextEntry={true}
 								error={errors.confirmpassword}
-								lastchild
 								onChange={(value) => this.setState({confirmpassword: value})} /> 
 							
 					    <Button

@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
    paddingBottom:0
   },
   hed: {
-    fontSize: 35,
+    fontSize: 28,
     lineHeight: 42,
     fontFamily:config.fontPrimary,
     paddingBottom: 8

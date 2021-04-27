@@ -1,4 +1,4 @@
-import { GET_INSTRUCTOR, GET_CLASS } from './types';
+import { GET_INSTRUCTOR, GET_CLASS_TYPE, GET_CLASS_TIME } from './types';
 import api from './api';
 
 export const getInstructor = instructor => ({
@@ -9,12 +9,20 @@ export const getInstructor = instructor => ({
 export const getInstructorAction = (headers) => dispatch => 
 	api.getInstructor.getInstructorData(headers).then(resData => dispatch(getInstructor(resData)))
 
-export const getClass = pelotonClass => ({
-    type: GET_CLASS,
-    pelotonClass,
+export const classType = classType => ({
+    type: GET_CLASS_TYPE,
+    classType,
 });
 
-export const getClassAction = (headers) => dispatch => 
-	api.getClass.getClassData(headers).then(resData => dispatch(getClass(resData)))
+export const classTypeAction = (headers) => dispatch => 
+	api.classType.classTypeData(headers).then(resData => dispatch(classType(resData)))
+	
+export const classTime = classTime => ({
+    type: GET_CLASS_TIME,
+    classTime,
+});
+
+export const classTimeAction = (headers) => dispatch => 
+	api.classTime.classTimeData(headers).then(resData => dispatch(classTime(resData)))
 	
 

@@ -33,7 +33,11 @@ export const styles = StyleSheet.create({
 	body:{
 	  backgroundColor: config.white,
 	  paddingTop: 20,
-	  paddingBottom: 90,
-	  paddingHorizontal: 25
+	  // paddingBottom: 90,
+	  paddingHorizontal: 25,
 	},
+	borderBottom:{
+		borderBottomColor:'#e9e9e9',
+    borderBottomWidth:0.75,
+	}
 });

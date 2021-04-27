@@ -21,7 +21,7 @@ class Leaderboard extends Component {
 				<View style={styles.container}>
 					<ScrollView>
 						<View style={styles.bG}>
-							<Header back title='2021 in 2021'/>
+							<Header hamburger back title='2021 in 2021'/>
 							{/*<View style={[styles.block,styles.bottomSpace,styles.spaceArea]}>
 								<View style ={styles.roundBlks}>
 					    			<Image style={{width: 49, height: 42, }} source={require('../../../assets/images/bike.png')} />
@@ -51,7 +51,7 @@ class Leaderboard extends Component {
 							      <Text style={styles.info}>3500 mi</Text>
 							      <Text style={styles.lead}>25%</Text>
 							    </View>
-							</TouchableOpacity>
+								</TouchableOpacity>
 							<TouchableOpacity onPress={this.onDetails} style={[styles.item,styles.noborder]}>
 				    			<View>
 								    <Text style={styles.title}>45 min Sweat Steady Ride </Text>

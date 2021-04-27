@@ -113,104 +113,99 @@ class Header extends Component {
 	}
 	
   render() {
-  	const {style,back,title} = this.props;
+  	const {style,back,title,hamburger,noBack} = this.props;
   	const {openMenu,bodyScroll} = this.state;	
   	  	console.log(bodyScroll,'bodyScroll')	
 
     return (
     	<View>
     		<Dialog visible={this.state.openMenu} 
-    		overlayBackgroundColor='transparent'
-    		dialogAnimation={new SlideAnimation({
-			      slideFrom: 'right',
-			      initialValue:0,
-			      animationDuration: 100, 
-			    })}
-    		width = {'100%'} height = {'100%'}>
-    		 <ScrollView >
+	    		overlayBackgroundColor='transparent'
+	    		dialogAnimation={new SlideAnimation({
+				      slideFrom: 'right',
+				      initialValue:0,
+				      animationDuration: 100, 
+				    })}
+	    		width = {'100%'} height = {'100%'}>
+    		  <ScrollView >
             <DialogContent style={styles.menuBody}>
-            
-            
-		          
-		            <View style={styles.head}>
-		              <View style={[styles.titleBlk,styles.blockEvent]}>
-		                <H4 style={{ paddingRight: 5,color:'#FFC1C1',fontSize:23,
-		                lineHeight: 23,paddingBottom: 0,marginBottom: 0}} >barkle</H4>
-		                <Image style={{width: 41, height: 27, marginBottom:Platform.OS === 'ios' ? 10 : 10}} source={require('../../../assets/images/menuLogo.png')} />
-		              </View>
-		              <TouchableOpacity onPress={this.onPress}>
-		                <Image style={{width: 15, height: 15}} source={require('../../../assets/images/closem.png')} />
-		              </TouchableOpacity>
+	            <View style={styles.head}>
+	              <View style={[styles.titleBlk,styles.blockEvent]}>
+	                <H4 style={{ paddingRight: 5,color:'#FFC1C1',fontSize:23,
+	                lineHeight: 23,paddingBottom: 0,marginBottom: 0}} >barkle</H4>
+	                <Image style={{width: 41, height: 27, marginBottom:Platform.OS === 'ios' ? 10 : 10}} source={require('../../../assets/images/menuLogo.png')} />
+	              </View>
+	              <TouchableOpacity style={{paddingRight: 10}}onPress={this.onPress}>
+	                <Image style={{width: 15, height: 15}} source={require('../../../assets/images/closem.png')} />
+	              </TouchableOpacity>
+	            </View>
+			        <View style={styles.bodyMenu}>
+		            <View>
+		                <TouchableOpacity style={styles.menuSec} onPress={this.toHome}>
+		                    <View style={styles.iconSec}>
+		                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/dashboardm.png')} />
+		                    </View>
+		                    <View>
+		                        <H3 style={styles.newColor}>dashboard</H3>
+		                        <P style={styles.newColor}>view your rides, challenges, and missions at a glance</P>
+		                    </View>
+		                </TouchableOpacity>
+		                <TouchableOpacity style={styles.menuSec} onPress={this.toRides}>
+		                    <View style={styles.iconSec}>
+		                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/rides.png')} />
+		                    </View>
+		                    <View>
+		                        <H3 style={styles.newColor}>rides</H3>
+		                        <P style={styles.newColor}>see upcoming rides, or view the leaderboard of past rides</P>
+		                    </View>
+		                </TouchableOpacity>
+		                <TouchableOpacity style={styles.menuSec} onPress={this.toMissions}>
+		                    <View style={styles.iconSec}>
+		                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/missions.png')} />
+		                    </View>
+		                    <View>
+		                        <H3 style={styles.newColor}>missions</H3>
+		                        <P style={styles.newColor}>take part and follow live group leaderboard updates</P>
+		                    </View>
+		                </TouchableOpacity>
+			                <TouchableOpacity style={styles.menuSec} onPress={this.toChallenges}>
+			                    <View style={styles.iconSec}>
+			                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/challenges.png')} />
+			                    </View>
+			                    <View>
+			                        <H3 style={styles.newColor}>challenges</H3>
+			                        <P style={styles.newColor}>join a challenge and engage with fellow riders in your group</P>
+			                    </View>
+			                </TouchableOpacity>
+			                 <TouchableOpacity style={styles.menuSec} onPress={this.toSettings}>
+			                    <View style={styles.iconSec}>
+			                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/drive.png')} />
+			                    </View>
+			                    <View>
+			                        <H3 style={styles.newColor}>tools</H3>
+			                        <P style={styles.newColor}>fine tune your performance and go to the next level</P>
+			                    </View>
+			                </TouchableOpacity>
 		            </View>
-		           
-			            <View style={styles.bodyMenu}>
-			            <View>
-			                <TouchableOpacity style={styles.menuSec} onPress={this.toHome}>
-			                    <View style={styles.iconSec}>
-			                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/dashboardm.png')} />
-			                    </View>
-			                    <View>
-			                        <H3 style={styles.newColor}>dashboard</H3>
-			                        <P style={styles.newColor}>view your rides, challenges, and missions at a glance</P>
-			                    </View>
-			                </TouchableOpacity>
-			                <TouchableOpacity style={styles.menuSec} onPress={this.toRides}>
-			                    <View style={styles.iconSec}>
-			                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/rides.png')} />
-			                    </View>
-			                    <View>
-			                        <H3 style={styles.newColor}>rides</H3>
-			                        <P style={styles.newColor}>see upcoming rides, or view the leaderboard of past rides</P>
-			                    </View>
-			                </TouchableOpacity>
-			                <TouchableOpacity style={styles.menuSec} onPress={this.toMissions}>
-			                    <View style={styles.iconSec}>
-			                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/missions.png')} />
-			                    </View>
-			                    <View>
-			                        <H3 style={styles.newColor}>missions</H3>
-			                        <P style={styles.newColor}>take part and follow live group leaderboard updates</P>
-			                    </View>
-			                </TouchableOpacity>
-				                <TouchableOpacity style={styles.menuSec} onPress={this.toChallenges}>
-				                    <View style={styles.iconSec}>
-				                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/challenges.png')} />
-				                    </View>
-				                    <View>
-				                        <H3 style={styles.newColor}>challenges</H3>
-				                        <P style={styles.newColor}>join a challenge and engage with fellow riders in your group</P>
-				                    </View>
-				                </TouchableOpacity>
-				                 <TouchableOpacity style={styles.menuSec} onPress={this.toSettings}>
-				                    <View style={styles.iconSec}>
-				                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/drive.png')} />
-				                    </View>
-				                    <View>
-				                        <H3 style={styles.newColor}>tools</H3>
-				                        <P style={styles.newColor}>fine tune your performance and go to the next level</P>
-				                    </View>
-				                </TouchableOpacity>
-			            	</View>
-		            		</View>
-		            
-		          
-		       
-		        
+		          </View>
             </DialogContent>
-            </ScrollView>
-          </Dialog>
+          </ScrollView>
+        </Dialog>
       {/*openMenu && <MenuItems onPress={this.onPress}/>*/}
     		<View style={[styles.profile,style]}>
 				{back && <TouchableOpacity onPress={this.onBack} style={styles.imgBlk}>
 					<Image style={{width: 30, height: 20 }} source={require('../../../assets/images/backArrow.png')} />
 				</TouchableOpacity>}
-				<View style={{width: '100%'}}>
+				<View style={[styles.headWidth,noBack && styles.fullWidth]}>
+				<View style={styles.borderTop}>
+			  	<View style={styles.borderTops}></View>
+			  </View>
 					<View style={styles.titleBlk}>
 					<H2 style={{ paddingRight: 5}} >barkle</H2>
 					<Image style={{width: 54, height: 35, marginBottom:Platform.OS === 'ios' ? 5 : 10}} source={require('../../../assets/images/logo.png')} />
-					<TouchableOpacity onPress={this.menuOpen} style={{left: 50}}>
+					{hamburger && <TouchableOpacity onPress={this.menuOpen} style={{marginLeft: 'auto',marginRight: 20}}>
 						<Image style={{width: 24, height: 16}} source={require('../../../assets/images/Hamburger.png')} />
-					</TouchableOpacity>
+					</TouchableOpacity>}
 					</View>
 					<View>
 					{title && <Text style={styles.title}>{title}</Text>}
@@ -227,6 +222,8 @@ Header.propTypes = {
     style: PropTypes.any,
     back: PropTypes.any,
     title: PropTypes.any,
+    hamburger: PropTypes.any,
+    noBack: PropTypes.any,
 };
 
 

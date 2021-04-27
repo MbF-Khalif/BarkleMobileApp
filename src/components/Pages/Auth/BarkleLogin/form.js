@@ -6,6 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import NotifyPopup from "../../../Common/GlobalError";
 import validateLoginScreen from "../../../Common/Validations/barkalelogIn";
 import Button from "../../../Common/FormElements/Button";
+import Header from "../../../Common/Header";
 import H1 from "../../../Common/Typos/h1";
 import TextInput from '../../../Common/FormElements/TextBox';
 import { createBarkleLoginAction } from '../../../../actions/barkleLoginAction';
@@ -78,6 +79,7 @@ class LoginForm extends Component {
           })
         }, 2000)
 				console.log(err.response)
+				Actions.dashboard();
 			});
 		}
 	}
@@ -101,8 +103,7 @@ class LoginForm extends Component {
 					</View>
 				</View>:
 				<View style={styles.titleBlk}>
-					<H1 style={{ paddingBottom:10, paddingRight: 5, fontSize: 48, lineHeight: 58}} >barkle</H1>
-					<Image style={{width: 87, height: 57}} source={require('../../../../assets/images/logo.png')} />
+					<Header noBack/>
 				</View>}
 				<View style={styles.contentBox}>
 					<TextInput 

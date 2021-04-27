@@ -51,9 +51,7 @@ export const styles = StyleSheet.create({
     width:'100%',
     alignItems:'baseline',
     color: config.white,
-    borderBottomWidth:1,
-    borderBottomColor:config.white,
     marginBottom: 40,
-    marginLeft: '43%',
+    marginLeft: Platform.OS === 'ios' ?'43%' : '30%',
   },
 });

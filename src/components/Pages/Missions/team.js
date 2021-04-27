@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
 import H2 from "../../Common/Typos/h2";
+import { Separator } from 'native-base';
 import RadioButton from '../../Common/FormElements/Checkbox/select';
 import List from "../../Common/List";
 import Range from "./range";
@@ -49,9 +50,9 @@ class Team extends Component {
 	}
 	_head(item){
     return(
-        <View style={{alignItems:'center'}}>
+        <Separator bordered style={{alignItems:'center'}}>
           <Text>{item.title}</Text>
-        </View>
+        </Separator>
     );
 }
 

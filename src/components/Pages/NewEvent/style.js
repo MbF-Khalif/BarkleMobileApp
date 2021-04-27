@@ -118,5 +118,11 @@ export const styles = StyleSheet.create({
         paddingBottom: 10,
         fontSize: 15,
     },
+    classBlock: {
+        backgroundColor: '#db413c', 
+        paddingHorizontal: 10, 
+        paddingTop: 20, 
+        marginBottom: 20
+    }
 
 });

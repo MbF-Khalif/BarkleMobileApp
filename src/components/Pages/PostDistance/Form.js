@@ -141,6 +141,12 @@ class Form extends Component {
     const pickTime = moment(date).format('LT')
     this.setState({ time: pickTime,currentDate: date});
   }
+  passStateValue = (el) => {
+    console.log(el,'alert');
+    this.setState({
+      bodyScroll:el
+    })
+  }
   render() {
     const genderList = ['Walking (Outdoor)','Walking (Indoor)'];
     const {selectedMission} = this.props;
@@ -164,7 +170,8 @@ class Form extends Component {
     return (
       <View style={styles.formContainer}>
         {errorState === true && <NotifyPopup content={MEMBER_EXIST} cancel />}
-          <Header back/>
+          <Header passStateValue={this.passStateValue} hamburger back/>
+          <View style={{paddingHorizontal:20}}>
           <H4 style={{color: 'white'}}>Post an activity</H4>
           <View style={styles.condentBox}>  
             {/*<Picker 
@@ -243,6 +250,7 @@ class Form extends Component {
               label="Save"
               loader={this.state.loaderStatus}
             />
+          </View>
           </View>
         </View>
     );

@@ -1,9 +1,9 @@
-import { GET_CLASS_TYPE } from '../actions/types';
+import { GET_CLASS } from '../actions/types';
 
 export default (state = {}, action = {}) => {
     switch (action.type) {
-	    case GET_CLASS_TYPE:
-	        return action.classType
+	    case GET_CLASS:
+	        return action.classTime
 	    default:
 	        return state;
     }

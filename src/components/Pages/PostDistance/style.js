@@ -6,8 +6,8 @@ export const styles = StyleSheet.create({
         // flex:1,
         // justifyContent:'center',
         // alignItems: 'center',
-        paddingHorizontal:20,
-        paddingTop:20,
+        // paddingHorizontal:20,
+        // paddingTop:20,
         backgroundColor:'#44C0C6',
     },
     formContainer: {

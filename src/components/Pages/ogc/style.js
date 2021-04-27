@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
         height: 56,
         paddingBottom: 0,
         marginBottom: 0,
-        lineHeight:0,
+        lineHeight:40,
 
     },
     container:{
@@ -51,8 +51,8 @@ export const styles = StyleSheet.create({
     linkText: {
         color: config.white,
         fontSize: 20,
-        lineHeight: 24,
-        fontFamily:config.fontSecondory,
+        // lineHeight: 24,
+        fontFamily:config.fontPrimary,
     },
     largeFont:{
         color: config.white,
@@ -72,8 +72,10 @@ export const styles = StyleSheet.create({
         marginBottom:0,
         paddingBottom: 0,
     },
-    spaceBar: {
-        paddingTop: 50
+    body: {
+        paddingBottom: 50,
+        paddingTop: 10,
+        
     },
     spaceTag:{
         lineHeight: 50

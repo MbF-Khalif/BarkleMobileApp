@@ -352,5 +352,10 @@ export const styles = StyleSheet.create({
         color: '#525252',
         fontSize: 18,
         fontFamily: config.fontPrimary,
+    },
+    borderBottom: {
+        borderBottomWidth: 1,
+        borderColor: '#d3d3d3',
+        paddingBottom: 5
     }
 });

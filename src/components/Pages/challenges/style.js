@@ -19,13 +19,16 @@ export const styles = StyleSheet.create({
         paddingVertical: 12,
         marginBottom: 8,
     },
+    newView:{
+      height: 66,
+    },
     accordinBloks:{
         backgroundColor: 'red',
         height: 50
     },
     accordinTitle:{
         fontSize:18,
-        fontFamily:config.fontPrimary,
+        fontFamily:config.fontSecondory,
         color:'#E98EA4',
         lineHeight:15,
     },
@@ -98,6 +101,12 @@ export const styles = StyleSheet.create({
       borderBottomWidth:1,
       borderBottomColor:config.white,
     },
+    condentBorder:{
+      borderBottomColor:'#e9e9e9',
+      borderBottomWidth:0.75,
+      marginBottom: 30,
+      paddingBottom: 20
+    },
     eventsDetails:{
         paddingHorizontal: 25
     },
@@ -155,8 +164,65 @@ export const styles = StyleSheet.create({
     blockEvent:{
         flex: 0,
         flexDirection:'row',
-        paddingBottom: 20,
-        flexWrap:'wrap',        
+        paddingBottom: 13,
+        flexWrap:'wrap',  
+         borderBottomColor:'#e9e9e9',
+        borderBottomWidth:0.75,
+        marginBottom:13      
+    },
+    tabBody:{
+      flex: 0,
+      flexDirection:'row', 
+      paddingVertical: 30, 
+    },
+    deActive: {
+        backgroundColor: '#ededed',
+    },
+    activeColor:{
+        backgroundColor:'#e98ea4',
+    },
+    activeTexts:{
+        color:'#0c3033',
+    },
+    activeBoxs:{
+        borderTopColor: '#e98ea4',
+    },
+    activeBox:{
+      position: 'absolute',
+      bottom: -9,
+      // left:'60%',
+      // transform: [{ translateX: '25%' }],
+      borderTopWidth:10,
+      borderTopColor: '#0c3033',
+      borderLeftColor: 'transparent',
+      borderRightColor: 'transparent',
+      borderLeftWidth:10,
+      borderRightWidth:10,
+      justifyContent: 'center', alignItems: 'center'
+    },
+    activeText:{
+       fontFamily:config.fontPrimary,
+    },
+    tabBlk:{
+      alignItems: 'center',
+      backgroundColor: '#0c3033',
+      borderRadius: 3,
+      minWidth: 65,
+      height: 29,
+      textAlign: 'center',
+      justifyContent: 'center',
+      position: 'relative',
+      marginRight: 5,
+      paddingHorizontal: 15,
+    },
+    tabItem:{
+      color:'#e98ea4',
+      fontFamily: 11,
+      lineHeight: 15,
+      fontFamily: config.fontSecondory,
+    },
+    tabItems:{
+      color:'#0c3033',
     },
     removeBorer:{
         borderTopWidth: 0,
@@ -179,7 +245,9 @@ export const styles = StyleSheet.create({
         lineHeight: 20,
         color:'#525252',
         fontFamily:config.fontPrimary,
-        paddingBottom: 5
+        paddingBottom: 5,
+        paddingRight: 10,
+        width: '90%'
     },
     eventDate:{
         color:'#525252',
@@ -267,9 +335,6 @@ export const styles = StyleSheet.create({
         color:'#44c0c6',
         fontFamily:config.fontPrimary, 
     },
-    activeText:{
-        color:config.white,
-    },
     activeTab: {
         backgroundColor:'#44c0c6',
     },
@@ -295,11 +360,15 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 0.5,
     },
     item: {
-        paddingVertical: 28,
+        alignItems: 'center',
+        backgroundColor: '#0c3033',
+        borderRadius: 6,
+        paddingHorizontal: 16,
+        minHeight: 66,
         paddingRight: 10,
-        borderBottomColor: '#D3D3D3',
-        borderBottomWidth: 0.5,
         flexDirection: 'row',
+        marginBottom: 8,
+        justifyContent: 'space-around',
     },
     borderTop:{
         borderTopColor: '#D3D3D3',
@@ -341,7 +410,8 @@ export const styles = StyleSheet.create({
     fontFamily:config.fontPrimary,
     lineHeight: 16,
     color: '#44C0C6',
-    paddingBottom: 3
+    paddingBottom: 0,
+    marginRight: 10,
   },
   name: {
     fontSize: 11,
@@ -363,19 +433,28 @@ export const styles = StyleSheet.create({
     color: '#525252',
   },
   textColor:{
-    color:'#525252'
+    color:'#e98ea4'
   },
   info: {
+    backgroundColor: '#134a4e',
+    borderRadius: 3,
+    paddingTop: 7,
+    paddingHorizontal: 8,
+    textAlign: 'center',
+    flex: 0,
     fontSize: 18,
     fontFamily:config.fontPrimary,
     lineHeight: 16,
-    color: '#525252'
+    color: '#e98ea4',
+    height: 28,
+    minWidth: 104,
+    marginRight: 10,
   },
   count: {
     fontSize: 14,
     fontFamily:config.fontPrimary,
     lineHeight: 16,
-    color: '#FFFFFF'
+    color: '#0c3033'
   },
   lead: {
     fontSize: 11,
@@ -385,7 +464,7 @@ export const styles = StyleSheet.create({
     textAlign:'right'
   },
   roundBlk:{
-    backgroundColor: '#44C0C6',
+    backgroundColor: '#e98ea4',
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
@@ -409,7 +488,7 @@ export const styles = StyleSheet.create({
        alignItems: 'center'
     },
     textBottomspace:{
-        marginBottom:29,
+        marginBottom:8,
     },
     bottomSpace:{
         paddingBottom: 25,

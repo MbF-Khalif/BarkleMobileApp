@@ -268,7 +268,7 @@ uploadImage =()=>{
       <StatusBar backgroundColor='#F45B56' />
         <SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
         {errorState === true && <NotifyPopup content={MEMBER_EXIST} cancel />}
-          <Header back passStateValue={this.passStateValue} style={{paddingBottom:18}}/> 
+          <Header hamburger back passStateValue={this.passStateValue} style={{paddingBottom:40}}/> 
           {bodyScroll && <View style={styles.condentBox}>       
             <TextInput 
               label='What’s the name of your event?' 
@@ -294,57 +294,6 @@ uploadImage =()=>{
               currentDate={currentDate}
               error={errors.time}
             />
-            <ModalSelector
-              data={classData}
-              initValue="What kind of Peloton class is it?"
-              supportedOrientations={['portrait']}
-              accessible={true}
-              scrollViewAccessibilityLabel={'Scrollable options'}
-              cancelButtonAccessibilityLabel={'Cancel Button'}
-              onChange={(option)=>{ this.setState({classType:option.label})}}>
-              <TextInput 
-                label='What kind of Peloton class is it?' 
-                name='name'
-                editable={false}
-                value={this.state.classType}
-                style={styles.newTextBox}
-                fullWidth
-              />
-          </ModalSelector>
-            <ModalSelector
-              data={instructorData}
-              initValue="What's the name of the instructor?"
-              supportedOrientations={['portrait']}
-              accessible={true}
-              scrollViewAccessibilityLabel={'Scrollable options'}
-              cancelButtonAccessibilityLabel={'Cancel Button'}
-              onChange={(option)=>{ this.setState({instructor:option.label})}}>
-              <TextInput 
-                label="What's the name of the instructor?" 
-                name='name'
-                editable={false}
-                value={this.state.instructor}
-                style={styles.newTextBox}
-                fullWidth
-              />
-          </ModalSelector>
-            <ModalSelector
-              data={classTime}
-              initValue="And, the date and time for the class?"
-              supportedOrientations={['portrait']}
-              accessible={true}
-              scrollViewAccessibilityLabel={'Scrollable options'}
-              cancelButtonAccessibilityLabel={'Cancel Button'}
-              onChange={(option)=>{ this.setState({classDate:option.label})}}>
-              <TextInput 
-                label='And, the date and time for the class?' 
-                name='name'
-                editable={false}
-                value={this.state.classDate}
-                style={styles.newTextBox}
-                fullWidth
-              />
-          </ModalSelector>
             <View style={styles.textareaBlk}>
               <Text 
                 style={[styles.label, {fontSize:15,color:'#FDFDFD',lineHeight:18}]}>
@@ -361,7 +310,60 @@ uploadImage =()=>{
                 underlineColorAndroid={'transparent'}
               />
             </View>
-            <View style={{position:'relative'}}>
+            <View style={styles.classBlock}>
+              <ModalSelector
+                data={classData}
+                initValue="What kind of Peloton class is it?"
+                supportedOrientations={['portrait']}
+                accessible={true}
+                scrollViewAccessibilityLabel={'Scrollable options'}
+                cancelButtonAccessibilityLabel={'Cancel Button'}
+                onChange={(option)=>{ this.setState({classType:option.label})}}>
+                <TextInput 
+                  label='What kind of Peloton class is it?' 
+                  name='name'
+                  editable={false}
+                  value={this.state.classType}
+                  style={styles.newTextBox}
+                  fullWidth
+                />
+              </ModalSelector>
+              <ModalSelector
+                data={instructorData}
+                initValue="What's the name of the instructor?"
+                supportedOrientations={['portrait']}
+                accessible={true}
+                scrollViewAccessibilityLabel={'Scrollable options'}
+                cancelButtonAccessibilityLabel={'Cancel Button'}
+                onChange={(option)=>{ this.setState({instructor:option.label})}}>
+                <TextInput 
+                  label="What's the name of the instructor?" 
+                  name='name'
+                  editable={false}
+                  value={this.state.instructor}
+                  style={styles.newTextBox}
+                  fullWidth
+                />
+              </ModalSelector>
+              <ModalSelector
+                data={classTime}
+                initValue="And, the date and time for the class?"
+                supportedOrientations={['portrait']}
+                accessible={true}
+                scrollViewAccessibilityLabel={'Scrollable options'}
+                cancelButtonAccessibilityLabel={'Cancel Button'}
+                onChange={(option)=>{ this.setState({classDate:option.label})}}>
+                <TextInput 
+                  label='And, the date and time for the class?' 
+                  name='name'
+                  editable={false}
+                  value={this.state.classDate}
+                  style={styles.newTextBox}
+                  fullWidth
+                />
+              </ModalSelector>
+            </View>
+          <View style={{position:'relative'}}>
             <View style={styles.block}>
               <TextInput 
                 label='Upload an event icon (100 x 100px) - Optional' 
@@ -378,8 +380,8 @@ uploadImage =()=>{
               <Image style={{width: 27, height: 27}} source={require('../../../assets/images/error.png')}/>
               <Text style={{color:config.errorColor,paddingLeft:10,width: '90%', fontSize:16,fontFamily: config.fontSecondory}}>Large Size</Text>
             </View>}
-            </View>
-            {/*<View style={{position:'relative'}}>
+          </View>
+          {/*<View style={{position:'relative'}}>
             <View style={styles.block}>
               <TextInput
                 label="Upload an event pic (375 x 375px) - Optional"
@@ -398,7 +400,7 @@ uploadImage =()=>{
               <Image style={{width: 27, height: 27}} source={require('../../../assets/images/error.png')}/>
               <Text style={{color:config.errorColor,paddingLeft:10,width: '90%', fontSize:16,fontFamily: config.fontSecondory}}>Large Size</Text>
             </View>}
-            </View>*/}
+          </View>*/}
             <View style={styles.block}>
               <TextInput
                 label="Upload a ride badge - Optional"
@@ -428,6 +430,7 @@ uploadImage =()=>{
 }
 
 function mapStateToProps(state) {
+  console.log(state)
     return {
         instructors: state.getInstructor.data.message,
         pelotonClass: state.getClass.data.message,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text,Image,ScrollView,TouchableOpacity,StatusBar,SafeAreaView } from 'react-native';
+import { View, Text,Image,ScrollView,TouchableOpacity,StatusBar,SafeAreaView,Dimensions,StyleSheet } from 'react-native';
 import moment from 'moment';
 
 import H2 from "../../Common/Typos/h2";
@@ -11,13 +11,20 @@ import { Actions } from 'react-native-router-flux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import LinkList from "../../Common/LinkList";
 import { getAllEventAction } from '../../../actions/getAllEvent';
-import { getInstructorAction, getClassAction } from '../../../actions/refDataAction';
+import { getInstructorAction, classTypeAction, classTimeAction } from '../../../actions/refDataAction';
 import { addItemAction } from '../../../actions/seletedEventAction';
 import { connect } from 'react-redux';
 import { isEmpty, map,filter } from "lodash";
 import { getWorkouts } from '../../../actions/workoutsAction';
 import { styles } from './style';
- 
+
+const windowHeight = Dimensions.get('window').height;
+
+const styl = StyleSheet.create({
+    menuHeight:{
+      minHeight: windowHeight/1.8,
+    }
+});
 class Events extends Component {
 	constructor(){
         super();
@@ -83,10 +90,15 @@ class Events extends Component {
     }).catch(err => {
       console.log(err.response, err,'error instructor')
     });
-    this.props.getClassAction(headers).then(res => {
+    this.props.classTypeAction(headers).then(res => {
+    	console.log(res, 'class')
+    }).catch(err => {
+      console.log(err.response, err,'error class')
+    });
+    this.props.classTimeAction(headers).then(res => {
     	// console.log(res, 'instructor')
     }).catch(err => {
-      console.log(err.response, err,'error instructor')
+      console.log(err.response, err,'error class time')
     });
 	this.props.getAllEventAction(headers).then(res =>{
 		this.setState({
@@ -115,15 +127,15 @@ class Events extends Component {
 		console.log(filter(allEvents, (el, i) => el.eventdate < pickDate),pickDate);
 		const completedEvent = filter(allEvents, (el, i) => el.eventdate < pickDate)
 		const upComingEvent = filter(allEvents, (el, i) => el.eventdate > pickDate)
-		// console.log(upComingEvent,'upComingEvent',completedEvent,pickDate,allEvents);
+		console.log(upComingEvent,completedEvent,pickDate,allEvents);
 		return (
 			<View style={styles.container} >
 				<StatusBar backgroundColor='#F45B56' />
-				<SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
+				<SafeAreaView style={styles.topSafeArea} />
 				<ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>
 					<View style={styles.bG}>
-						<Header back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
-					    <View style={styles.eventsDetails}>
+						<Header hamburger back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
+					    <View style={[bodyScroll === false && styles.bodyHidden ,styles.eventsDetails]}>
 					    	<Text style={styles.p}>Events</Text>
 					    	<Text style={styles.workTitle}>Get ready to ride together with your pack! View exciting events or create your own.</Text>
 					    	<Button
@@ -131,12 +143,12 @@ class Events extends Component {
 				              uppercase
 				              width="100%"
 				              // bgColor={config.linkColor}
-				              label="Create a new event"
+				              label="Create a new ride"
 				              loader={this.state.loaderStatus}
 				            />
 					    </View>
 				    </View>
-				    <View style={styles.body}>
+				    <View style={[styl.menuHeight,styles.body]}>
 				    	<View style={styles.tabSec}>
 				    	<ScrollView horizontal={true}>
 					    	<TouchableOpacity onPress={this.onChange}  style={[styles.tabBlock,upcoming && styles.activeTab]}>
@@ -152,7 +164,7 @@ class Events extends Component {
 					     {map(upComingEvent, (el, i) => <LinkList key={i} onPress={this.onEventsDetails.bind(this, el)} timeOnly title={el.eventname} dayOnly days={moment(el.eventdate).format('dddd')} time={el.eventtime} date={moment(el.eventdate).format('DD MMM YYYY')} />)}
 					    </View> }
 					    {completed && <View style={styles.blockEvent}>
-						    {map(completedEvent, (el, i) => <LinkList key={i} onPress={this.onEventsDetails.bind(this, el)} timeOnly title={el.eventname} dayOnly days={moment(el.eventdate).format('dddd')} time={el.eventtime} date={moment(el.eventdate).format('DD MMM YYYY')} />)}
+						    {map(completedEvent, (el, i) => <LinkList   key={i} onPress={this.onEventsDetails.bind(this, el)} timeOnly title={el.eventname} dayOnly days={moment(el.eventdate).format('dddd')} time={el.eventtime} date={moment(el.eventdate).format('DD MMM YYYY')} />)}
 					    </View>}
 					    {myride && <View style={styles.blockEvent}>
 						    {map(completedEvent, (el, i) => <LinkList key={i} onPress={this.onEventsDetails.bind(this, el)} timeOnly title={el.eventname}  time={el.eventtime} date={moment(el.eventdate).format('DD MMM YYYY')} />)}
@@ -164,4 +176,4 @@ class Events extends Component {
 	}
 }
 
-export default connect(null, { addItemAction, getAllEventAction, getInstructorAction, getClassAction })(Events);
+export default connect(null, { addItemAction, getAllEventAction, getInstructorAction, classTypeAction, classTimeAction })(Events);

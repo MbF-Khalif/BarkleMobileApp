@@ -42,8 +42,8 @@ export default {
             axios.get(`${apiBarkleEndPoint}/auth/get_going_list/${evevtID}`,{headers:headers}).then(res => res),
     },  
     checkgoingmaybeAction: {
-        checkgoingmaybeDataAction: (userID,eventsIds,headers) => 
-            axios.get(`${apiBarkleEndPoint}/auth/check_going_maybe/${userID}/${eventsIds}`,{headers:headers}).then(res => res),
+        checkgoingmaybeDataAction: (eventsIds,userID,headers) => 
+            axios.get(`${apiBarkleEndPoint}/auth/check_going_maybe/${eventsIds}/${userID}`,{headers:headers}).then(res => res),
     }, 
     getuseridEventAction: {
         getuserideventDataAction: (data,headers) => 
@@ -109,8 +109,12 @@ export default {
         getInstructorData: (headers) =>
             axios.get(`https://uat.barkle.io/public/api/auth/get_inst_list`, {headers:headers}).then(res => res),
     },
-    getClass: {
-        getClassData: (headers) =>
+    classType: {
+        classTypeData: (headers) =>
             axios.get(`https://uat.barkle.io/public/api/auth/get_peloton_class`, {headers:headers}).then(res => res),
+    },
+    classTime: {
+        classTimeData: (headers) =>
+            axios.get(`https://uat.barkle.io/public/api/auth/get_datetime_class/is_encore/731d7b7f6b414a49892c21f01e25317d`, {headers:headers}).then(res => res),
     }
 };

@@ -56,6 +56,7 @@ class App extends Component {
    
   render() {
     const {userId,sessionId} = this.state;
+    // console.log(sessionId,userId,'sessionId')
     return (
         <ConnectedRoute>
           <Stack key='root' hideNavBar={true} panHandlers={null} swipeEnabled={false}>
@@ -64,8 +65,10 @@ class App extends Component {
             <Scene key='email' component={Email} />
             <Scene key='changePassword' component={ChangePassword} />
             <Scene key='signup' component={Signup} />
-            <Scene key='barklelogin' component={BarkleLogin}/>
+            <Scene key='barklelogin' component={BarkleLogin} />
             <Scene key='success' component={Success} />
+            <Scene key='login' component={Login} />
+            <Scene key='dashboard' component={Dashboard}  />
             {sessionId === null ?<Scene key='login' component={Login} initial/>: userId === null ? <Scene key='barklelogin' component={BarkleLogin} initial/>:
              <Scene key='dashboard' component={Dashboard} initial />}
             <Scene key='events' component={Events} />

@@ -9,6 +9,10 @@ export const styles = StyleSheet.create({
     topSafeArea: {
         backgroundColor: "#F45B56",
     },
+    bodyHidden:{
+        // display: 'none',
+
+    },
     menuColor: {
         backgroundColor: "#202840",
     },  
@@ -78,12 +82,14 @@ export const styles = StyleSheet.create({
         paddingRight: 5,
     },
     blockEvent:{
-        flex: 0,
-        flexDirection:'row',
-        paddingBottom: 20,
-        flexWrap:'wrap',        
-        height:'100%',
-        paddingRight: 20
+        // flex: 0,
+        // flexDirection:'row',
+        paddingBottom: 0,
+        // flexWrap:'wrap',        
+        // height:'100%',
+        marginRight: 20,
+        borderBottomColor:'#e9e9e9',
+        borderBottomWidth:0.75,
     },
     bG:{
         backgroundColor: "#f15b56",

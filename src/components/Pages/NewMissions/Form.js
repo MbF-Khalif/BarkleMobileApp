@@ -91,7 +91,7 @@ class Form extends Component {
     });
     if (this.isValid()) {
       this.setState({ errors: {}, loaderStatus: !this.state.loaderStatus });
-        Actions.dashboard();
+        // Actions.dashboard();
       console.log(errors)
     }
   };
@@ -164,12 +164,12 @@ class Form extends Component {
     return (
       <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>
       <StatusBar backgroundColor='#F45B56' />
-        <SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
+        <SafeAreaView style={styles.topSafeArea} />
         {errorState === true && <NotifyPopup content={MEMBER_EXIST} cancel />}
-            <Header back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
-         {bodyScroll && <View style={styles.condentBox}>          
+            <Header hamburger back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
+          <View style={styles.condentBox}>          
             <TextInput 
-              label='What’s the name of your mission?' 
+              label='What’s the name of your mission5345345?' 
               name='name'
               value={name}
               style={styles.newTextBox}
@@ -267,7 +267,7 @@ class Form extends Component {
               label="Set it up!"
               loader={this.state.loaderStatus}
             />
-          </View>}
+          </View>
         </ScrollView>
     );
   }

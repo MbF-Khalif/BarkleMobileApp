@@ -7,7 +7,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import NotifyPopup from "../../../Common/GlobalError";
 import validateLoginScreen from "../../../Common/Validations/logIn";
 import Button from "../../../Common/FormElements/Button";
-import H1 from "../../../Common/Typos/h1";
+import H2 from "../../../Common/Typos/h2";
+import Header from "../../../Common/Header";
 import P from "../../../Common/Typos/p";
 import TextInput from '../../../Common/FormElements/TextBox';
 import { createLoginAction } from '../../../../actions/loginAction';
@@ -37,9 +38,6 @@ class LoginForm extends Component {
     }
     return isValid;
   }
-
-	  
-	
 	handleSubmit = () =>{
 		const { password, name,errors } = this.state;
     if (this.isValid()) {
@@ -48,18 +46,16 @@ class LoginForm extends Component {
 			    "username_or_email": name,
 			    "password": password
 			}
-			this.setState({
-				// failure: true
-			})
 			this.props.createLoginAction(resObj).then(res =>{
-				console.log(res,res.loginDetails.data.user_data.workout_counts,'res')
 				if(res.loginDetails.status === 200) {
+					this.setState({
+						failure: false
+					})
 					const sessionId = JSON.stringify(res.loginDetails.data.session_id);
 					const workouts = JSON.stringify(res.loginDetails.data.user_data.workout_counts);
 					const userId = JSON.stringify(res.loginDetails.data.user_id);
 					const username = JSON.stringify(res.loginDetails.data.user_data.username);
 					const age = new Date().getFullYear() - new Date(res.loginDetails.data.user_data.birthday).getFullYear();
-					console.log(username,'userId')
 					AsyncStorage.setItem('sessionId', sessionId);
 					AsyncStorage.setItem('workouts', workouts);
 					AsyncStorage.setItem('userId', userId);
@@ -74,6 +70,7 @@ class LoginForm extends Component {
 				this.setState({
 					errorMsg: err.response.data.message,
 					errorState: true,
+					failure: true,
 					loaderStatus:false
 				});
 					setTimeout(() => {
@@ -97,8 +94,7 @@ class LoginForm extends Component {
 		console.log(errorMsg,'errorMsg')
 		return (
 			<View style={styles.formContainer}>
-			{errorState === true && <NotifyPopup content={errorMsg} />}
-				{failure === true?<View style={styles.topBox}>
+			{failure === true && <View style={styles.topBox}>
 					<View style={styles.leftContent}>
 					 <Image style={{width: 123, height: 119}} source={require('../../../../assets/images/group.png')}/>
 					</View>
@@ -107,16 +103,16 @@ class LoginForm extends Component {
 						<Text style={styles.texts}>We couldn’t find your account. Check your details and retry.</Text>
 						<Text style={[styles.texts,styles.boldfont]}>Woof! Woof!</Text>
 					</View>
-				</View>:
+				</View>}
+			<View style={styles.formContainers}>
+			{/*errorState === true && <NotifyPopup content={errorMsg} />*/}
+				{failure === false && 
 				<View style={styles.titleBlk}>
-					<H1 style={{ paddingBottom:10, paddingRight: 5, fontSize: 48, lineHeight: 58}} >barkle</H1>
-					<Image style={{width: 87, height: 57,position:'absolute',bottom:25,left:145}} source={require('../../../../assets/images/logo.png')} />
+					<Header noBack/>
 				</View>}
 				
 				<View style={styles.contentBox}>
-				<View style={{width:224}}>
-				<P>Let’s sign you up. We’ll start by validating your Peloton details and then proceed to create your Barkle account.</P>
-				</View>
+					<P style={{width:224}}>Let’s sign you up. We’ll start by validating your Peloton details and then proceed to create your Barkle account.</P>
 					<TextInput 
 						label='Peloton LB Name' 
 						name='name'
@@ -143,11 +139,14 @@ class LoginForm extends Component {
             loader={this.state.loaderStatus}
           />
 			  </View>
-			  <View style={styles.borderTop}></View>
+			  <View style={styles.borderTop}>
+			  	<View style={styles.borderTops}></View>
+			  </View>
 			  <View style={styles.block}>
-          <P style={styles.singleLine}>If you already have a Barkle account then please &nbsp;
+          <P>If you already have a Barkle account then please &nbsp;
           	     <TouchableOpacity onPress={this.onGoing}  style={styles.border} ><Text style={styles.link} >sign in.</Text></TouchableOpacity></P>
           </View>
+			</View>
 			</View>
 		);
 	}

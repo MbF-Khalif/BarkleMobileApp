@@ -79,6 +79,12 @@ class Individual extends Component {
 	onDetails =()=>{
 		Actions.leaderboard();
 	}
+	passStateValue = (el) => {
+		console.log(el,'alert');
+		this.setState({
+			bodyScroll:el
+		})
+	}
 	render() {
 		const distance = ((3700/1903.3) * 100).toFixed(2);
 		const time = ((550/359) * 100);
@@ -104,7 +110,7 @@ class Individual extends Component {
 				<View style={styles.container}>
 					<ScrollView showsVerticalScrollIndicator={false}>
 						<View style={styles.bG}>
-							<Header back/>
+							<Header passStateValue={this.passStateValue} hamburger back/>
 							<Profile profile title={selectedMission.mission_name} suptitle={selectedMission.mission_details} startDate={moment(selectedMission.mission_startdate).format('DD MMM YYYY')} endDate={moment(selectedMission.mission_enddate).format('DD MMM YYYY')}/>
 								{missionCompleted === false && <View>
 					    	{selectedMission.mission_status !== "active"  ? 

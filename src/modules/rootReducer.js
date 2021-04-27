@@ -26,6 +26,7 @@ import workOuts from '../reducers/workOuts';
 import selectedEvent from '../reducers/selectedEvent';
 import getInstructor from '../reducers/getInstructor';
 import getClass from '../reducers/getClass';
+import getClassTime from '../reducers/getClassTime';
 import goingmaybeEvent from '../reducers/goingMaybeEvent';
 import getmaybe from '../reducers/getMaybe';
 import getongoing from '../reducers/getOnGoing';
@@ -51,6 +52,7 @@ const appReducer = combineReducers({
     changePassword,
     getInstructor,
     getClass,
+    getClassTime,
     goingmaybeEvent,
     getuseridEvent,
     getmaybe,

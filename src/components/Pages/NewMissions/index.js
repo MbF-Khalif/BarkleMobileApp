@@ -7,6 +7,7 @@ import ImagePicker from 'react-native-image-crop-picker';
 import { Actions } from "react-native-router-flux";
 import { connect } from "react-redux";
 import Textarea from 'react-native-textarea';
+import ModalSelector from 'react-native-modal-selector'
 
 import validateCreateMissions from "../../Common/Validations/createMissions";
 import NotifyPopup from "../../Common/GlobalError";  
@@ -49,8 +50,8 @@ class CreateMissions extends Component {
       bearerAccess: '',
       userId: '',
       missionValue:'',
-      missionDetails:''
-
+      missionDetails:'',
+      classType: 'miles',
     };
   }
   componentDidMount() {
@@ -161,13 +162,19 @@ class CreateMissions extends Component {
       bodyScroll
     } = this.state;
     console.log(missionDetails,'missionDetails')
+    let index = 0;
+    const data = [
+        { key: index++, label: 'miles' },
+        { key: index++, label: 'minutes' },
+        { key: index++, label: 'calories' },
+      ];
     return (
-      <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>
-      <StatusBar backgroundColor='#F45B56' />
-        <SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
+      <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={styles.topSafeArea}>
+      <StatusBar backgroundColor='#44C0C6' />
+        <SafeAreaView style={styles.topSafeArea} />
         {errorState === true && <NotifyPopup content={MEMBER_EXIST} cancel />}
-            <Header back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
-         {bodyScroll && <View style={styles.condentBox}>          
+            <Header hamburger back passStateValue={this.passStateValue} style={{paddingBottom:38}}/>
+         <View style={styles.condentBox}>          
             <TextInput 
               label='What’s the name of your mission?' 
               name='name'
@@ -204,15 +211,23 @@ class CreateMissions extends Component {
                 onChange={(value) => this.setState({missionValue: validMobileNumber(value)})}
               />
               <View style={{marginLeft: 10}}>
-                <TextInput 
-                  // label='What is the target mileage for this mission?' 
-                  name='password'
-                  style={{width:124}}
-                  keyboardType="phone-pad"
-                  returnType="done"
-                  value={password}
-                  onChange={(value) => this.setState({password: value})}
-                />
+                <ModalSelector
+              data={data}
+              initValue="What kind of Peloton class is it?"
+              supportedOrientations={['portrait']}
+              accessible={true}
+              scrollViewAccessibilityLabel={'Scrollable options'}
+              cancelButtonAccessibilityLabel={'Cancel Button'}
+              onChange={(option)=>{ this.setState({classType:option.label})}}>
+              <TextInput 
+                // label='What kind of Peloton class is it?' 
+                name='name'
+                editable={false}
+                style={{width:124}}
+                value={this.state.classType}
+                fullWidth
+              />
+              </ModalSelector>
               </View>
             </View>
             <View style={styles.textareaBlk}>
@@ -267,7 +282,7 @@ class CreateMissions extends Component {
               label="Set it up!"
               loader={this.state.loaderStatus}
             />
-          </View>}
+          </View>
         </ScrollView>
     );
   }

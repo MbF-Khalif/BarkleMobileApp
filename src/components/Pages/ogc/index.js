@@ -87,39 +87,44 @@ class Ogc extends Component {
 		return (
 			<>
 				<StatusBar backgroundColor='#F45B56' />
-				<SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
-				<ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>
+				<SafeAreaView style={styles.topSafeArea} />
+				<ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={styles.topSafeArea}>
 				<View style={styles.container} >
-							<Header back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
-							{bodyScroll && <View style={styles.centerBlk}>
-						   		<H3 style={{ paddingBottom: 40}}>Output Goal Calculator</H3>
-						   		<Image style={{ height: 166}} source={require('../../../assets/images/ogc.png')}/>
-						   		<View style={{paddingVertical: 50,flex: 0,flexDirection: 'row',flexWrap: 'wrap'}}>
-							   		<Text style={styles.largeFont}>to achieve a target output of </Text>
-							   		<View style={styles.textPlace}><TextInput
-							        style={styles.input}
-							        value={kj}
-							         name='kj'
-							         lastchild
-							        onChange={(value) => this.setState({ kj: validMobileNumber(value)})}
-							      /></View>
-							      <Text style={styles.largeFont}> kj in</Text>
-								    <View style={styles.textPlace}>
-								      <TextInput
+					<Header hamburger back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
+					<View style={styles.centerBlk}>
+							   	<View style={styles.body}>
+							   		<H3 style={{ paddingBottom: 40,textAlign: 'center'}}>Output Goal Calculator</H3>
+							   		<Image style={{ height: 166}} source={require('../../../assets/images/ogc.png')}/>
+							   		<View style={{paddingVertical: 50,flex: 0,flexDirection: 'row',flexWrap: 'wrap',borderBottomWidth:0.75,
+        borderBottomColor:'#d3d3d3',marginBottom: 40}}>
+								   		<Text style={styles.largeFont}>to achieve a target output of </Text>
+								   		<View style={styles.textPlace}><TextInput
 								        style={styles.input}
-								        value={mins}
-								        lastchild
-								          onChange={(value) => this.setState({ mins: validMobileNumber(value)})}
-								      />
+								        value={kj}
+								         name='kj'
+								         keyboardType="phone-pad"
+								         lastchild
+								        onChange={(value) => this.setState({ kj: validMobileNumber(value)})}
+								      /></View>
+								      <Text style={styles.largeFont}> kj in</Text>
+									    <View style={styles.textPlace}>
+									      <TextInput
+									        style={styles.input}
+									        value={mins}
+									        keyboardType="phone-pad"
+									        lastchild
+									          onChange={(value) => this.setState({ mins: validMobileNumber(value)})}
+									      />
+									    </View>
+									    <Text style={styles.largeFont}>mins, you must hold an average output of</Text>
+									    <View style={styles.textPlace}>
+										    <Text style={[styles.input,styles.spaceTag]}>{!isEmpty(kj) && !isEmpty(mins) && mins != 0 && kiloJule}</Text>
+									    </View>
+									    <Text style={styles.largeFont}>watts 🤟</Text>
 								    </View>
-								    <Text style={styles.largeFont}>mins, you must hold an average output of</Text>
-								    <View style={styles.textPlace}>
-									    <Text style={[styles.input,styles.spaceTag]}>{!isEmpty(kj) && !isEmpty(mins) && mins != 0 && kiloJule}</Text>
-								    </View>
-								    <Text style={styles.largeFont}>watts 🤟</Text>
-										<Text style={[styles.normalText,styles.spaceBar]}>If you’re looking to push yourself to achieve this incredible output, then you might want to <TouchableOpacity style={styles.borderText}><Text style={styles.linkText}>create an event</Text></TouchableOpacity> and invite others to help you race to the finish. That LB’s going to look quite spicy!!</Text>		
+										<Text style={styles.normalText}>If you’re looking to push yourself to achieve this incredible output, then you might want to <TouchableOpacity style={styles.borderText}><Text style={styles.linkText}>create an event</Text></TouchableOpacity> and invite others to help you race to the finish. That LB’s going to look quite spicy!!</Text>		
 									</View>
-							</View>}
+					</View>
 				</View>
 				</ScrollView>
 			</>

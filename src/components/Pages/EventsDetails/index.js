@@ -72,7 +72,7 @@ class EventsDetails extends Component {
 	    this.ongoing();
 	    const {eventsIds} = this.state;
 	    this.props.leaderBoardAction();
-	    this.props.checkgoingmaybeAction(userId,eventsIds,headers).then(res =>{
+	    this.props.checkgoingmaybeAction(eventsIds,userId,headers).then(res =>{
 	    	const check = res.checkgoingmaybe.data.message.event_type;
 	    	console.log(res,'checkgoingmaybeAction')
 	    	this.setState({
@@ -286,11 +286,11 @@ class EventsDetails extends Component {
 		return (
 			<View style={styles.container} >
 				<StatusBar backgroundColor='#F45B56' />
-				<SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
+				<SafeAreaView style={styles.topSafeArea} />
 				<ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>	
-						<Header back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
+						<Header hamburger back passStateValue={this.passStateValue} style={{paddingBottom:18}}/>
 						{/*<CalenderEvent/>*/}
-						{bodyScroll && <View>
+						
 				    	<View style={[styles.block,styles.bottomSpace,styles.spaceArea]}>
 				    		<View style ={styles.roundBlk}>
 				    			<Image style={{width: 49, height: 42,resizeMode: 'cover' }} source={require('../../../assets/images/default.png')} />
@@ -367,13 +367,16 @@ class EventsDetails extends Component {
 				    	<Image style={{width: 10, height: 10,marginLeft:'auto'}} source={require('../../../assets/images/rightArrow.png')}/>
 			        </TouchableOpacity>)}
 			    </View> }
+			    <View style={styles.borderBottom}>
+			    	<Text style={[styles.p,styles.boldColor]}>leaderboard</Text>
+			    </View>
 			    {!isEmpty(eventLeaderBord) && !isEmpty(eventLeaderBord[0].partc_ranking) && <FlatList
 			        data={eventLeaderBord[0].partc_ranking}
 			        renderItem={this.renderItem}
 			        keyExtractor={item => item.id}
 			    />}
 			</View>	
-			</View>}			   
+						   
 			</ScrollView>
 		</View>
 		);

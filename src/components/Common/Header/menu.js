@@ -114,7 +114,42 @@ class Menu extends Component {
                         <P style={styles.newColor}>fine tune your performance and go to the next level</P>
                     </View>
                 </TouchableOpacity>
-                
+                <TouchableOpacity style={styles.menuSec} onPress={this.toSettings}>
+                    <View style={styles.iconSec}>
+                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/drive.png')} />
+                    </View>
+                    <View>
+                        <H3 style={styles.newColor}>tools</H3>
+                        <P style={styles.newColor}>fine tune your performance and go to the next level</P>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuSec} onPress={this.toSettings}>
+                    <View style={styles.iconSec}>
+                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/drive.png')} />
+                    </View>
+                    <View>
+                        <H3 style={styles.newColor}>tools</H3>
+                        <P style={styles.newColor}>fine tune your performance and go to the next level</P>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuSec} onPress={this.toSettings}>
+                    <View style={styles.iconSec}>
+                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/drive.png')} />
+                    </View>
+                    <View>
+                        <H3 style={styles.newColor}>tools</H3>
+                        <P style={styles.newColor}>fine tune your performance and go to the next level</P>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuSec} onPress={this.toSettings}>
+                    <View style={styles.iconSec}>
+                        <Image style={{width: 24, height: 24}} source={require('../../../assets/images/drive.png')} />
+                    </View>
+                    <View>
+                        <H3 style={styles.newColor}>tools</H3>
+                        <P style={styles.newColor}>fine tune your performance and go to the next level</P>
+                    </View>
+                </TouchableOpacity>
             </View>
         )
     }

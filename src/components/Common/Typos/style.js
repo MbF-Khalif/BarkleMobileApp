@@ -47,6 +47,13 @@ export const styles = StyleSheet.create({
         color:"#f45b56",
         paddingBottom: 20,
     },
+    titleFive: {
+        backgroundColor:'transparent',
+        fontSize:18,
+        lineHeight: 20,
+        fontFamily:config.fontPrimary,
+        color:"#0c3033",
+    },
     paragraph: {
         color: config.white,
         fontFamily:config.fontSecondory,

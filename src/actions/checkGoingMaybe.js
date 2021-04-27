@@ -6,7 +6,7 @@ export const checkgoingmaybe = checkgoingmaybe => ({
     checkgoingmaybe,
 });
 
-export const checkgoingmaybeAction = (userID,eventsIds,headers) => dispatch => 
-	api.checkgoingmaybeAction.checkgoingmaybeDataAction(userID,eventsIds,headers).then(resData => dispatch(checkgoingmaybe(resData)))
+export const checkgoingmaybeAction = (eventsIds,userID,headers) => dispatch => 
+	api.checkgoingmaybeAction.checkgoingmaybeDataAction(eventsIds,userID,headers).then(resData => dispatch(checkgoingmaybe(resData)))
 	
 

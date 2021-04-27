@@ -115,14 +115,14 @@ class challanges extends Component {
 				<View style={styles.container} >
 					<ScrollView backgroundColor='#5862E9'>
 						<View style={styles.bG}>
-							<Header passStateValue={this.passStateValue} back/>
+							<Header hamburger passStateValue={this.passStateValue} back/>
 						   {bodyScroll && <View style={styles.eventsDetails}>
 						    	<Text style={styles.p}>Challenges</Text>
-						    	<Text style={styles.workTitle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.</Text>
+						    	<Text style={styles.workTitle}>Push yourself and put the pedal to the metal by joining a team challenge. Join on your own or get a group together. Are you up for it?</Text>
 						    </View>}
 					    </View>
 					    {bodyScroll && <View style={[styles.body,styl.menuHeight]}>
-							  <View style={styles.blockEvent}>
+							  <View >
 							    {map(allChallenge, (el, i) => <LinkList key={i} dates={el.start_date} style={styles.removeBorer} onPress={this.onEventsDetails.bind(this, el)} challenge title={el.name} value={el.partc_teams.length} mail={el.tot_weeks} startday={moment(el.start_date).format('DD MMM YYYY')} endday={moment((now).setDate((now).getDate() + el.tot_weeks * 7)).format('DD MMM YYYY')} time={el.tot_weeks} />)}
 						    </View>
 							</View>}					    

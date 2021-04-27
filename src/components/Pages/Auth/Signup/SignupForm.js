@@ -100,7 +100,6 @@ class SignUp extends Component {
               value={password}
               secureTextEntry={isPasswordVisible}
               error={errors.password}
-              lastchild
               visibleIcon
               onChange={(value) => this.setState({password: value})}
               onVisibleChange={() => this.setState({isPasswordVisible: !this.state.isPasswordVisible})} 

@@ -89,7 +89,7 @@ class Missions extends Component {
 	onEventsDetails = (el) => {
 		this.props.addMissionAction(el);
 		console.log(el,'onEventsDetails')
-		Actions.individual();
+		// Actions.individual();
 	}
 	handleSubmit = () => {
 		Actions.createMissions();
@@ -112,12 +112,12 @@ class Missions extends Component {
 		return (
 			<>
 				<StatusBar backgroundColor='#44C0C6' />
-				<SafeAreaView style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]} />
+				<SafeAreaView style={styles.topSafeArea} />
 				<View style={styles.container} >
 					<ScrollView showsVerticalScrollIndicator={false} passStateValue={this.passStateValue}backgroundColor='#44C0C6'>
 						<View style={styles.bG}>
-							<Header passStateValue={this.passStateValue} back/>
-						    {bodyScroll && <View style={styles.eventsDetails}>
+							<Header hamburger passStateValue={this.passStateValue} back/>
+						    <View style={styles.eventsDetails}>
 						    	<Text style={styles.p}>Missions</Text>
 						    	<Text style={styles.workTitle}>Ride your chosen route and achieve your goals with a team or alone! Record your details or create your own mission.</Text>
 						    	<Button
@@ -128,9 +128,9 @@ class Missions extends Component {
 					              label="Create a new mission"
 					              loader={this.state.loaderStatus}
 					            />
-						    </View>}
+						    </View>
 					    </View>
-					    {bodyScroll && <View style={[styl.menuHeight,styles.body]}>
+					    <View style={[styl.menuHeight,styles.body]}>
 					    	<View style={styles.tabSec}>
 						    	<ScrollView horizontal={true}>
 						    		<TouchableOpacity onPress={this.onChanged}  style={[styles.tabBlock,activeMissions && styles.activeTab]}>
@@ -153,7 +153,7 @@ class Missions extends Component {
 					    {activeMissions && <View style={styles.blockEvent}>
 						    {map(activeEvent, (el, i) => <LinkList key={i} onPress={this.onEventsDetails.bind(this, el)} mils title={el.mission_name} value={el.mission_type_val} mail={el.mission_value} startday={moment(el.mission_startdate).format('DD MMM YYYY')} endday={moment(el.mission_enddate).format('DD MMM YYYY')}/>)}
 					    </View>}
-						</View>}				    
+						</View>				    
 					</ScrollView>
 				</View>
 			</>

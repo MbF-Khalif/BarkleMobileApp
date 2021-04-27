@@ -12,7 +12,10 @@ export const styles = StyleSheet.create({
     marginBottom: 'auto',
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
+  },
+  formContainers: {
+    width: 224,
   },
   rightContent: {
     width: '55%',
@@ -30,6 +33,7 @@ export const styles = StyleSheet.create({
     borderBottomColor:config.white,
     marginBottom: 53,
     paddingBottom: 32,
+    paddingTop: 20
   },   
   text: {
     color: config.white,
@@ -46,22 +50,19 @@ export const styles = StyleSheet.create({
     fontFamily:config.fontSecondory,
   },
   titleBlk:{
-    paddingTop: 100,
     flexDirection:'row',
-    width:'100%',
-    alignItems:'baseline',
-    color: config.white,
-    borderBottomWidth:1,
-    borderBottomColor:config.white,
-    marginBottom: 40,
-    marginLeft: '43%',
+    width:224,
+    // width:'100%',
+    alignItems:'center',
+    // color: config.white,
+    // marginLeft: Platform.OS === 'ios' ?'43%' : '30%',
   },
   button: {
     backgroundColor: "#DDDDDD",
     color: "#fff",
   },
   block:{
-    width:'55%',
+    width:224,
     color: config.white,
     paddingTop: 34,
   },
@@ -90,12 +91,16 @@ export const styles = StyleSheet.create({
     marginBottom: 37,  
   },
   borderTop:{
+   position: 'relative',
+  },
+  borderTops:{
     borderTopWidth:1,
     borderTopColor:config.white,
-    width: '100%',
-    alignItems:'flex-end',
-    marginLeft: '43%',
+    position: 'absolute',
+    left: 0,
+    right: -100,
   },
+  
   contentBox: {
     paddingBottom: 20,
   }

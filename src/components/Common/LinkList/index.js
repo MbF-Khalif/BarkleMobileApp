@@ -15,7 +15,7 @@ class LinkList extends Component {
     		{img && <Image style={{width: 50, height: 50,marginRight: 15}} source={imgs}/>}
     		<View>
 	    		<Text style={[styles.eventTitle,border && styles.titleOnly]}>{title}</Text>
-	    		<View style={{display: 'flex',flexDirection:'row'}}>
+	    		<View style={{display: 'flex',flexDirection:'row',paddingRight: 45}}>
                     {challenge && <View>
                     <Text style={styles.eventDate}>{mail} TEAMS / RIDERS {value}</Text>
                     <Text style={styles.eventDate}>{startday} TO {endday}</Text>
@@ -30,7 +30,7 @@ class LinkList extends Component {
                     <Text style={styles.eventDate}>{date}</Text>
 		    	</View>
 	    	</View>
-	    	<Image style={{width: 5, height: 10,marginLeft:'auto'}} source={require('../../../assets/images/rightArrow.png')}/>
+	    	<Image style={[styles.rightImg, border && styles.spaceAlign]} source={require('../../../assets/images/rightArrow.png')}/>
         </TouchableOpacity>
     );
   }

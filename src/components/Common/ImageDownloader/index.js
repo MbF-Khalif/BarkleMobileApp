@@ -103,7 +103,7 @@ class ImageDownloader extends Component {
     return /[.]/.exec(filename) ?
              /[^.]+$/.exec(filename) : undefined;
   };
-  const {badgeLabel} = this.props;
+  const {badgeLabel,style} = this.props;
   return (
     <View>
       
@@ -121,7 +121,7 @@ class ImageDownloader extends Component {
       <TouchableOpacity
         style={styles.button}
         onPress={checkPermission}>
-        <Text style={styles.upload}>
+        <Text style={[styles.upload,style]}>
           {badgeLabel}
         </Text>
       </TouchableOpacity>
@@ -131,7 +131,7 @@ class ImageDownloader extends Component {
 }
 ImageDownloader.propTypes = {
     // // dataArray: PropTypes.array,
-    // // checkedIndex: PropTypes.any,
+    style: PropTypes.any,
     // timepick: PropTypes.func,
     // onDateChange: PropTypes.func,
     // currentDate: PropTypes.func,

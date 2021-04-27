@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
         borderBottomColor:config.white,
         marginBottom: 53,
         paddingBottom: 32,
-        paddingTop: 50,
+        paddingTop: 70,
     },   
     text: {
        fontSize:21,

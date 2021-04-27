@@ -12,12 +12,20 @@ export const styles = StyleSheet.create({
     borderBottom:{
         borderBottomColor:'#e9e9e9',
         borderBottomWidth:0.75,
-        paddingBottom:10
+        paddingBottom:20
     },
     block:{
        display: 'flex',
        flexDirection:'row',
        alignItems: 'center'
+    },
+    rightImg: {
+        width: 8, 
+        height: 10,
+        marginLeft:'auto',
+    },
+    spaceAlign:{
+        marginBottom: 10
     },
     eventDate:{
         color:'#525252',
@@ -31,9 +39,12 @@ export const styles = StyleSheet.create({
         lineHeight: 26,
         color:'#525252',
         fontFamily:config.fontPrimary,
-        paddingBottom: 5
+        paddingBottom: 5,
+        paddingRight: 20,
     },
     titleOnly: {
         paddingBottom: 0,
+        marginBottom: 0,
+        lineHeight: 22,
     }
 });
