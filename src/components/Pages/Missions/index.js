@@ -89,7 +89,7 @@ class Missions extends Component {
 	onEventsDetails = (el) => {
 		this.props.addMissionAction(el);
 		console.log(el,'onEventsDetails')
-		// Actions.individual();
+		Actions.individual();
 	}
 	handleSubmit = () => {
 		Actions.createMissions();

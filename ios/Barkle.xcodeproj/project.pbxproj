@@ -48,12 +48,12 @@
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00B8A27610C65FB81F36FEE7 /* Pods-SSN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSN.debug.xcconfig"; path = "Target Support Files/Pods-SSN/Pods-SSN.debug.xcconfig"; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* SSNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* BarkleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarkleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SSNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSNTests.m; sourceTree = "<group>"; };
 		057F79CE5503D3D1F292C9FB /* Pods-SSN-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSN-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SSN-tvOSTests/Pods-SSN-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		135147BFAAFF4073B4DA9CE4 /* LatoBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = LatoBold.ttf; path = ../src/assets/fonts/LatoBold.ttf; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* SSN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		135147BFAAFF4073B4DA9CE4 /* LatoBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LatoBold.ttf; path = ../src/assets/fonts/LatoBold.ttf; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Barkle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barkle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SSN/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SSN/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SSN/Images.xcassets; sourceTree = "<group>"; };
@@ -62,21 +62,21 @@
 		14E96DCE928DC423F2C8BF3D /* libPods-SSN-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSN-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F73ED867A02D99AFE37E95 /* Pods-SSN-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSN-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SSN-tvOS/Pods-SSN-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		28A72EA8F966394ECC2BDD51 /* libPods-SSN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E47B1E0B4A5D006451C7 /* SSN-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SSN-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* SSN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SSN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* Barkle-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barkle-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* Barkle-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barkle-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F6331BAE9941F72520E21E /* Pods-SSN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSN.release.xcconfig"; path = "Target Support Files/Pods-SSN/Pods-SSN.release.xcconfig"; sourceTree = "<group>"; };
-		3B6B2BD3EEE3437FA1CD0B63 /* LatoBlack.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = LatoBlack.ttf; path = ../src/assets/fonts/LatoBlack.ttf; sourceTree = "<group>"; };
+		3B6B2BD3EEE3437FA1CD0B63 /* LatoBlack.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LatoBlack.ttf; path = ../src/assets/fonts/LatoBlack.ttf; sourceTree = "<group>"; };
 		3BFA9A753902EF38307FAA0B /* Pods-SSN-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSN-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SSN-tvOSTests/Pods-SSN-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		62A76524D5FC4F34B99BA409 /* Latoregular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Latoregular.ttf; path = ../src/assets/fonts/Latoregular.ttf; sourceTree = "<group>"; };
+		62A76524D5FC4F34B99BA409 /* Latoregular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Latoregular.ttf; path = ../src/assets/fonts/Latoregular.ttf; sourceTree = "<group>"; };
 		67586134C94333DCB851F228 /* libPods-SSN-SSNTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSN-SSNTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F3AE6BB10B78CA0C914AFA /* Pods-SSN-SSNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSN-SSNTests.release.xcconfig"; path = "Target Support Files/Pods-SSN-SSNTests/Pods-SSN-SSNTests.release.xcconfig"; sourceTree = "<group>"; };
-		6E6B530A2FB541758594D55E /* ProximaSoft-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "ProximaSoft-Regular.ttf"; path = "../src/assets/fonts/ProximaSoft-Regular.ttf"; sourceTree = "<group>"; };
+		6E6B530A2FB541758594D55E /* ProximaSoft-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ProximaSoft-Regular.ttf"; path = "../src/assets/fonts/ProximaSoft-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SSN/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98D527D7AF083BB46F1BE950 /* libPods-SSN-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSN-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A123C9454DA8744812E21AB1 /* Pods-SSN-SSNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSN-SSNTests.debug.xcconfig"; path = "Target Support Files/Pods-SSN-SSNTests/Pods-SSN-SSNTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A846FEACEB544AF7BDEDAA0F /* PlayfairDisplaybold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = PlayfairDisplaybold.ttf; path = ../src/assets/fonts/PlayfairDisplaybold.ttf; sourceTree = "<group>"; };
+		A846FEACEB544AF7BDEDAA0F /* PlayfairDisplaybold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = PlayfairDisplaybold.ttf; path = ../src/assets/fonts/PlayfairDisplaybold.ttf; sourceTree = "<group>"; };
 		B7BE7835C0336797F9528643 /* Pods-SSN-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSN-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SSN-tvOS/Pods-SSN-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		E001B1B3C9F54F8FAC5AD954 /* ProximaSoft-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "ProximaSoft-Bold.ttf"; path = "../src/assets/fonts/ProximaSoft-Bold.ttf"; sourceTree = "<group>"; };
+		E001B1B3C9F54F8FAC5AD954 /* ProximaSoft-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ProximaSoft-Bold.ttf"; path = "../src/assets/fonts/ProximaSoft-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -187,10 +187,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* SSN.app */,
-				00E356EE1AD99517003FC87E /* SSNTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* SSN-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* SSN-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Barkle.app */,
+				00E356EE1AD99517003FC87E /* BarkleTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* Barkle-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* Barkle-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,7 +206,6 @@
 				6E6B530A2FB541758594D55E /* ProximaSoft-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		CB58BA587BC70CBD659F2BC4 /* Pods */ = {
@@ -221,16 +220,15 @@
 				3BFA9A753902EF38307FAA0B /* Pods-SSN-tvOSTests.debug.xcconfig */,
 				057F79CE5503D3D1F292C9FB /* Pods-SSN-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* SSNTests */ = {
+		00E356ED1AD99517003FC87E /* BarkleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SSNTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "BarkleTests" */;
 			buildPhases = (
 				BEBF3567E8C7C8C9F5FD4360 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -243,14 +241,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = SSNTests;
+			name = BarkleTests;
 			productName = SSNTests;
-			productReference = 00E356EE1AD99517003FC87E /* SSNTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* BarkleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* SSN */ = {
+		13B07F861A680F5B00A75B9A /* Barkle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SSN" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Barkle" */;
 			buildPhases = (
 				5EB43766E5BDA9302A9A778C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -264,14 +262,14 @@
 			);
 			dependencies = (
 			);
-			name = SSN;
+			name = Barkle;
 			productName = SSN;
-			productReference = 13B07F961A680F5B00A75B9A /* SSN.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Barkle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* SSN-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* Barkle-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SSN-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Barkle-tvOS" */;
 			buildPhases = (
 				D13BE00BBB77E43104B787D5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -284,14 +282,14 @@
 			);
 			dependencies = (
 			);
-			name = "SSN-tvOS";
+			name = "Barkle-tvOS";
 			productName = "SSN-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* SSN-tvOS.app */;
+			productReference = 2D02E47B1E0B4A5D006451C7 /* Barkle-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* SSN-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* Barkle-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SSN-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Barkle-tvOSTests" */;
 			buildPhases = (
 				30CA9DDFFB63F45805BE49FC /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -303,9 +301,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "SSN-tvOSTests";
+			name = "Barkle-tvOSTests";
 			productName = "SSN-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* SSN-tvOSTests.xctest */;
+			productReference = 2D02E4901E0B4A5D006451C7 /* Barkle-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -321,6 +319,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = C64K3QU7XQ;
 						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -334,7 +333,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SSN" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Barkle" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -347,10 +346,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* SSN */,
-				00E356ED1AD99517003FC87E /* SSNTests */,
-				2D02E47A1E0B4A5D006451C7 /* SSN-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* SSN-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* Barkle */,
+				00E356ED1AD99517003FC87E /* BarkleTests */,
+				2D02E47A1E0B4A5D006451C7 /* Barkle-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* Barkle-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -636,12 +635,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* SSN */;
+			target = 13B07F861A680F5B00A75B9A /* Barkle */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* SSN-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* Barkle-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -666,7 +665,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SSN.app/SSN";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barkle.app/Barkle";
 			};
 			name = Debug;
 		};
@@ -686,7 +685,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SSN.app/SSN";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barkle.app/Barkle";
 			};
 			name = Release;
 		};
@@ -697,6 +696,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C64K3QU7XQ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SSN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -705,8 +705,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = SSN;
+				PRODUCT_BUNDLE_IDENTIFIER = in.zimpi.barkle;
+				PRODUCT_NAME = Barkle;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -720,6 +720,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C64K3QU7XQ;
 				INFOPLIST_FILE = SSN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -727,8 +728,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = SSN;
+				PRODUCT_BUNDLE_IDENTIFIER = in.zimpi.barkle;
+				PRODUCT_NAME = Barkle;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -812,7 +813,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.SSN-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SSN-tvOS.app/SSN-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barkle-tvOS.app/Barkle-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -839,7 +840,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.SSN-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SSN-tvOS.app/SSN-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barkle-tvOS.app/Barkle-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -960,7 +961,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SSNTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "BarkleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -969,7 +970,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SSN" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Barkle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -978,7 +979,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SSN-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Barkle-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -987,7 +988,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SSN-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Barkle-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -996,7 +997,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SSN" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Barkle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

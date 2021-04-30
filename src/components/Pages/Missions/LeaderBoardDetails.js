@@ -11,7 +11,7 @@ import { styles } from './style';
 
 class leaderboardDetails extends Component {
 	onDetails =()=>{
-		Actions.leaderboardDetails()
+		// Actions.leaderboardDetails()
 	}
 	render() {
 		return (

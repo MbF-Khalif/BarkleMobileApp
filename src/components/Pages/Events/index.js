@@ -91,14 +91,14 @@ class Events extends Component {
       console.log(err.response, err,'error instructor')
     });
     this.props.classTypeAction(headers).then(res => {
-    	console.log(res, 'class')
+    	// console.log(res, 'class')
     }).catch(err => {
-      console.log(err.response, err,'error class')
+      console.log(err.response, err,'error class');
     });
     this.props.classTimeAction(headers).then(res => {
-    	// console.log(res, 'instructor')
+    	// console.log(res, 'class time');
     }).catch(err => {
-      console.log(err.response, err,'error class time')
+      console.log(err.response, err,'error class time');
     });
 	this.props.getAllEventAction(headers).then(res =>{
 		this.setState({
@@ -125,9 +125,8 @@ class Events extends Component {
 		const { name, bodyScroll,gender, age, location, image,completed,upcoming,allEvents,myride} = this.state;
 		const pickDate = moment(new Date()).format('YYYY-MM-DD');
 		console.log(filter(allEvents, (el, i) => el.eventdate < pickDate),pickDate);
-		const completedEvent = filter(allEvents, (el, i) => el.eventdate < pickDate)
-		const upComingEvent = filter(allEvents, (el, i) => el.eventdate > pickDate)
-		console.log(upComingEvent,completedEvent,pickDate,allEvents);
+		const completedEvent = filter(allEvents, (el, i) => el.eventdate < pickDate);
+		const upComingEvent = filter(allEvents, (el, i) => el.eventdate > pickDate);
 		return (
 			<View style={styles.container} >
 				<StatusBar backgroundColor='#F45B56' />

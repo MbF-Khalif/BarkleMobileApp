@@ -101,9 +101,9 @@ class NewEventForm extends Component {
       "eventtime": time,
       "eventdate": eventdate,
       "eventdesc": eventDes,
-      "event_icon": "1.png",
+      "event_icon": eventIcon,
       "event_img": "1.png",
-      "ride_img": "1.png",
+      "ride_img": badge,
       "ride_id": "ea2b20658764401ab4dde2ded855ce5awe2",
       "user_id": userId,
       "type_class": classType==="Live"?"is_live":classType==="Encore"?"is_encore":"is_studio",
@@ -249,20 +249,37 @@ uploadImage =()=>{
       iconSize,
       eventSize,
       errmsg,
-      bodyScroll
+      bodyScroll,
+      classType
     } = this.state;
+    const { classTime, instructors, pelotonClass } = this.props;
+    const liveTime = classTime.filter(el => el.is_live === true);
+    const encoreTime = classTime.filter(el => el.is_encore === true);
+    const studioTime = classTime.filter(el => el.is_studio === true);
     let instructorData = [],
-        classData = [];
-    const instructorList = Object.values(this.props.instructors);
-    const classList = Object.values(this.props.pelotonClass);
+        classData = [],
+        classTimeData = [];
+    const instructorList = Object.values(instructors);
+    const classList = Object.values(pelotonClass);
+    if(classType === 'Live') {
+      liveTime.map((el, i) => {
+        classTimeData.push({key: i, label: moment(el.scheduled_start_time).format('LLL')})
+      })
+    }else if(classType === 'Encore') {
+      encoreTime.map((el, i) => {
+        classTimeData.push({key: i, label: moment(el.scheduled_start_time).format('LLL')})
+      })
+    }else {
+      studioTime.map((el, i) => {
+        classTimeData.push({key: i, label: moment(el.scheduled_start_time).format('LLL')})
+      })
+    }
     instructorList.map((el, i) => {
       instructorData.push({ key: i, label: el });
     });
     classList.map((el, i) => {
       classData.push({ key: i, label: el });
     });
-    let classTime = [{key: 0, label: moment(1615467600).format('LLL')}]
-    // moment().format('LLL')
     return (
       <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false} style={[bodyScroll === true ?styles.topSafeArea: styles.menuColor]}>
       <StatusBar backgroundColor='#F45B56' />
@@ -346,7 +363,7 @@ uploadImage =()=>{
                 />
               </ModalSelector>
               <ModalSelector
-                data={classTime}
+                data={classTimeData}
                 initValue="And, the date and time for the class?"
                 supportedOrientations={['portrait']}
                 accessible={true}
@@ -430,10 +447,10 @@ uploadImage =()=>{
 }
 
 function mapStateToProps(state) {
-  console.log(state)
     return {
         instructors: state.getInstructor.data.message,
         pelotonClass: state.getClass.data.message,
+        classTime: state.getClassTime.data.message
     }
 }
 

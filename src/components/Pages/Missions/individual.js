@@ -77,7 +77,7 @@ class Individual extends Component {
     
   };
 	onDetails =()=>{
-		Actions.leaderboard();
+		// Actions.leaderboard();
 	}
 	passStateValue = (el) => {
 		console.log(el,'alert');
@@ -151,71 +151,6 @@ class Individual extends Component {
 					    		<View style={styles.Textborder}>
 					    			<Text style={styles.sectionTitle}>Leaderboard</Text>
 					    		</View>
-					    		<TouchableOpacity onPress={this.onDetails} style={styles.item}>
-					    			<View style={styles.roundBlk}>
-					    				<Text style={styles.count}>11</Text>
-					    			</View>
-					    			<View>
-									    <Text style={styles.title}>CookednotBurnt</Text>
-									    <Text style={styles.name}>STEVEN CONNELL</Text>
-										</View>
-								    <View style={{flexDirection: 'column',marginLeft: 'auto'}}>
-								      <Text style={styles.info}>3500 mi</Text>
-								      <Text style={styles.lead}>25%</Text>
-								    </View>
-								</TouchableOpacity>
-									<View style={styles.item}>
-					    			<View style={styles.roundBlk}>
-					    				<Text style={styles.count}>11</Text>
-					    			</View>
-					    			<View>
-									    <Text style={styles.title}>CookednotBurnt</Text>
-									    <Text style={styles.name}>STEVEN CONNELL</Text>
-										</View>
-								    <View style={{flexDirection: 'column',marginLeft: 'auto'}}>
-								      <Text style={styles.info}>3500 mi</Text>
-								      <Text style={styles.lead}>25%</Text>
-								    </View>
-									</View>
-									<View style={styles.item}>
-					    			<View style={styles.roundBlk}>
-					    				<Text style={styles.count}>11</Text>
-					    			</View>
-					    			<View>
-									    <Text style={styles.title}>CookednotBurnt</Text>
-									    <Text style={styles.name}>STEVEN CONNELL</Text>
-										</View>
-								    <View style={{flexDirection: 'column',marginLeft: 'auto'}}>
-								      <Text style={styles.info}>3500 mi</Text>
-								      <Text style={styles.lead}>25%</Text>
-								    </View>
-									</View>
-									<View style={styles.item}>
-					    			<View style={styles.roundBlk}>
-					    				<Text style={styles.count}>11</Text>
-					    			</View>
-					    			<View>
-									    <Text style={styles.title}>CookednotBurnt</Text>
-									    <Text style={styles.name}>STEVEN CONNELL</Text>
-										</View>
-								    <View style={{flexDirection: 'column',marginLeft: 'auto'}}>
-								      <Text style={styles.info}>3500 mi</Text>
-								      <Text style={styles.lead}>25%</Text>
-								    </View>
-									</View>
-									<View style={styles.item}>
-					    			<View style={styles.roundBlk}>
-					    				<Text style={styles.count}>11</Text>
-					    			</View>
-					    			<View>
-									    <Text style={styles.title}>CookednotBurnt</Text>
-									    <Text style={styles.name}>STEVEN CONNELL</Text>
-										</View>
-								    <View style={{flexDirection: 'column',marginLeft: 'auto'}}>
-								      <Text style={styles.info}>3500 mi</Text>
-								      <Text style={styles.lead}>25%</Text>
-								    </View>
-									</View>
 					    	</View>
 						</View>
 					</ScrollView>
@@ -225,7 +160,6 @@ class Individual extends Component {
 	}
 }
 function mapStateToProps(state) {
-	console.log(state,'state')
   return {
     selectedMission: state.selectedMissions.missions,
   }
